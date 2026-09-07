@@ -98,9 +98,46 @@
       transform: scale(1.12);
       background: linear-gradient(135deg, #C86B47 0%, #A44A27 100%);
     }
+
+    /* BANNER SUPERIOR DE LA AGENCIA */
+    .agency-banner {
+      position: relative;
+      width: 100%;
+      background: linear-gradient(90deg, #FD8B2F, #34D707, #FDD603);
+      background-size: 200% auto;
+      animation: shimmer-text 5s linear infinite;
+      color: #120D0A;
+      padding: 10px 16px;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 700;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .agency-banner a {
+      color: #120D0A;
+      text-decoration: underline;
+      font-weight: 900;
+    }
+    .agency-banner a:hover {
+      color: #FFF8E7;
+    }
+    @keyframes shimmer-text {
+      to { background-position: 200% center; }
+    }
   </style>
 </head>
 <body class="selection:bg-[#A44A27] selection:text-white">
+
+  <!-- BANNER SUPERIOR DE LA AGENCIA -->
+  <div class="agency-banner">
+    <i class="fas fa-lightbulb"></i>
+    <span>Demo desarrollada por <a href="https://wa.me/5511953285680?text=Ol%C3%A1%20Ang%C3%A9lica%2C%20quero%20meu%20diagn%C3%B3stico%20gratuito" target="_blank" rel="noopener">Angélica Digital</a>. ¿Quieres una página web de alta conversión para tu restaurante?</span>
+  </div>
 
   <!-- NAVBAR -->
   <header class="sticky top-0 z-40 bg-[#FDF8F5]/95 backdrop-blur-md border-b border-[#F0E5DE]">
@@ -116,7 +153,7 @@
           <button onclick="setLanguage('pt')" id="btn-pt" class="px-2.5 py-1 rounded-full uppercase transition-all text-[#6E5D57] hover:text-[#2B1E1A]">PT</button>
         </div>
 
-        <a id="nav-reserve-btn" href="https://wa.me/573222858658" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex bg-[#A44A27] hover:bg-[#C86B47] text-white px-4 py-2 rounded-full text-xs font-medium tracking-wide transition-colors">
+        <a id="nav-reserve-btn" href="https://wa.me/5511953285680?text=Ol%C3%A1%20Ang%C3%A9lica%2C%20quero%20meu%20diagn%C3%B3stico%20gratuito" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex bg-[#A44A27] hover:bg-[#C86B47] text-white px-4 py-2 rounded-full text-xs font-medium tracking-wide transition-colors">
           Reservar Mesa
         </a>
       </div>
@@ -266,7 +303,7 @@
             <div class="absolute left-0 top-0 bottom-0 w-1.5 bg-[#A44A27]"></div>
             <div>
               <h3 id="loc-card-title3" class="text-xs uppercase tracking-wider text-[#C86B47] font-semibold mb-1">Contacto Directo</h3>
-              <p class="text-xs text-[#F0E5DE]/80">WhatsApp: +57 322 285 8658</p>
+              <p class="text-xs text-[#F0E5DE]/80">WhatsApp: +55 11 95328-5680</p>
               <p class="text-xs text-[#F0E5DE]/80 mt-0.5">Instagram: @merakilocal.cosmo</p>
             </div>
           </div>
@@ -311,7 +348,7 @@
         <a href="https://www.facebook.com/Merakiloverscolombia" target="_blank" rel="noopener noreferrer" class="footer-social-circle" aria-label="Facebook">
           <i class="fab fa-facebook-f"></i>
         </a>
-        <a href="https://wa.me/573222858658" target="_blank" rel="noopener noreferrer" class="footer-social-circle" aria-label="WhatsApp">
+        <a href="https://wa.me/5511953285680?text=Ol%C3%A1%20Ang%C3%A9lica%2C%20quero%20meu%20diagn%C3%B3stico%20gratuito" target="_blank" rel="noopener noreferrer" class="footer-social-circle" aria-label="WhatsApp">
           <i class="fab fa-whatsapp"></i>
         </a>
       </div>
@@ -323,7 +360,9 @@
       <div class="w-full border-t border-[#3A2A25] my-6"></div>
 
       <div class="text-xs text-[#F0E5DE]/80 space-y-2">
-        <div>Diseñado con <span class="text-[#C86B47]">🔥</span> potencia <span class="text-white font-semibold">Angélica Digital</span></div>
+        <div>Diseñado con <span class="text-[#C86B47]">🔥</span> potencia 
+          <a href="https://wa.me/5511953285680?text=Ol%C3%A1%20Ang%C3%A9lica%2C%20quero%20meu%20diagn%C3%B3stico%20gratuito" target="_blank" rel="noopener" class="text-white font-semibold underline ml-1">Angélica Digital</a>
+        </div>
         <div class="text-[#F0E5DE]/50">&copy; 2026 Meraki. Todos los derechos reservados.</div>
       </div>
 
@@ -331,9 +370,9 @@
   </footer>
 
   <!-- FLOATING WHATSAPP BUTTON -->
-  <a
+  <a 
     id="floating-wa"
-    href="https://wa.me/573222858658"
+    href="https://wa.me/5511953285680?text=Ol%C3%A1%20Ang%C3%A9lica%2C%20quero%20meu%20diagn%C3%B3stico%20gratuito"
     target="_blank"
     rel="noopener noreferrer"
     class="whatsapp-float-btn"
@@ -409,7 +448,7 @@
         locCardHours: '2:00 PM – 10:00 PM',
         locCardTitle3: 'Contacto Directo',
         locMapBtn: 'Cómo llegar en Google Maps →',
-        whatsappMsg: '¡Hola! Quiero consultar disponibilidad y hacer una reserva en Meraki Salento.',
+        whatsappMsg: 'Olá Angélica, quero meu diagnóstico gratuito',
         bookExp: 'Reservar Experiencia',
         orderBtn: 'Pedir →',
         tagExp: 'Experiencia',
@@ -456,7 +495,7 @@
         locCardHours: '2:00 PM – 10:00 PM',
         locCardTitle3: 'Direct Contact',
         locMapBtn: 'Get Directions on Google Maps →',
-        whatsappMsg: 'Hello! I would like to inquire about bookings and experiences at Meraki Salento.',
+        whatsappMsg: 'Olá Angélica, quero meu diagnóstico gratuito',
         bookExp: 'Book Experience',
         orderBtn: 'Order →',
         tagExp: 'Experience',
@@ -503,7 +542,7 @@
         locCardHours: '14:00 – 22:00',
         locCardTitle3: 'Contato Direto',
         locMapBtn: 'Como Chegar no Google Maps →',
-        whatsappMsg: 'Olá! Gostaria de consultar informações e reservas no Meraki Salento.',
+        whatsappMsg: 'Olá Angélica, quero meu diagnóstico gratuito',
         bookExp: 'Reservar Experiência',
         orderBtn: 'Pedir →',
         tagExp: 'Experiência',
@@ -512,7 +551,6 @@
     };
 
     const MENU_ITEMS = [
-      // ================= EXPERIENCIAS =================
       {
         id: 'exp1',
         cat: 'experiencias',
@@ -531,9 +569,9 @@
           pt: 'Sabores de Salento (por Meraki)' 
         },
         waMsg: {
-          es: '¡Hola! Me gustaría reservar la experiencia "Sabores de Salento (por Meraki)". ¿Qué fechas y horarios tienen disponibles?',
-          en: 'Hello! I would like to book the "Flavors of Salento (by Meraki)" experience. What dates and times are available?',
-          pt: 'Olá! Gostaria de reservar a experiência "Sabores de Salento (por Meraki)". Quais datas e horários estão disponíveis?'
+          es: 'Olá Angélica, quero meu diagnóstico gratuito',
+          en: 'Olá Angélica, quero meu diagnóstico gratuito',
+          pt: 'Olá Angélica, quero meu diagnóstico gratuito'
         },
         intro: {
           es: 'Un viaje a fuego lento por los sabores de Salento y la cocina de autor:',
@@ -584,9 +622,9 @@
           pt: 'A Voz das Plantas (Grow Ganja)' 
         },
         waMsg: {
-          es: '¡Hola! Quiero información y disponibilidad para reservar la experiencia "La Voz de las Plantas (Grow Ganja)".',
-          en: 'Hello! I want information and availability to book "The Voice of Plants (Grow Ganja)" experience.',
-          pt: 'Olá! Quero informações e disponibilidade para reservar a experiência "A Voz das Plantas (Grow Ganja)".'
+          es: 'Olá Angélica, quero meu diagnóstico gratuito',
+          en: 'Olá Angélica, quero meu diagnóstico gratuito',
+          pt: 'Olá Angélica, quero meu diagnóstico gratuito'
         },
         intro: {
           es: 'Recorrido botánico y sensorial para reconectar con el bienestar vegetal:',
@@ -637,9 +675,9 @@
           pt: 'Salento Real: Histórias por Trás das Ruas' 
         },
         waMsg: {
-          es: '¡Hola! Me interesa reservar la caminata cultural "Salento Real: Historias Detrás de sus Calles". ¿Me confirman cupos disponibles?',
-          en: 'Hello! I am interested in booking the cultural walk "Salento Real: Stories Behind the Streets". Can you confirm available spots?',
-          pt: 'Olá! Tenho interesse em reservar a caminhada cultural "Salento Real: Histórias por Trás das Ruas". Pode me confirmar vagas?'
+          es: 'Olá Angélica, quero meu diagnóstico gratuito',
+          en: 'Olá Angélica, quero meu diagnóstico gratuito',
+          pt: 'Olá Angélica, quero meu diagnóstico gratuito'
         },
         intro: {
           es: 'No vengas solo a ver Salento, ven a entenderlo. Caminata cultural en 5 momentos:',
@@ -693,9 +731,9 @@
           pt: 'Grow Ganja: Da Semente à Transformação' 
         },
         waMsg: {
-          es: '¡Hola! Me gustaría recibir información sobre la experiencia "Grow Ganja: De la Semilla a la Transformación".',
-          en: 'Hello! I would like to receive information about the "Grow Ganja: From Seed to Transformation" experience.',
-          pt: 'Olá! Gostaria de receber informações sobre a experiência "Grow Ganja: Da Semente à Transformação".'
+          es: 'Olá Angélica, quero meu diagnóstico gratuito',
+          en: 'Olá Angélica, quero meu diagnóstico gratuito',
+          pt: 'Olá Angélica, quero meu diagnóstico gratuito'
         },
         intro: {
           es: 'Experiencia turística pionera en educación cannábica sin mitos ni estigmas:',
@@ -728,8 +766,6 @@
           pt: '“Da semente à planta, e da planta à sua transformação.”'
         }
       },
-
-      // ================= ENTRADAS =================
       { 
         id: 'e1', 
         cat: 'entradas', 
@@ -808,8 +844,6 @@
           pt: 'Patacões de banana-da-terra crocantes típicos de Salento servidos com guacamole e molho da casa.' 
         } 
       },
-
-      // ================= FUERTES =================
       {
         id: 'f1',
         cat: 'fuertes',
@@ -992,8 +1026,6 @@
           pt: 'Tortilha de trigo tostada recheada com queijo derretido, frango desfiado e feijão ao molho de birria.'
         }
       },
-
-      // ================= BEBIDAS CALIENTES =================
       {
         id: 'bc1',
         cat: 'calientes',
@@ -1124,8 +1156,6 @@
           pt: 'Bebida quente tradicional feita com rapadura orgânica.'
         }
       },
-
-      // ================= BEBIDAS FRÍAS =================
       {
         id: 'bf1',
         cat: 'frias',
@@ -1443,7 +1473,6 @@
       document.getElementById('cannabis-price').innerHTML = `+${formatPrice(5000, lang)}`;
       document.getElementById('faq-title').textContent = t.faqTitle;
 
-      // Galería de fotos
       document.getElementById('gallery-tag').textContent = t.galleryTag;
       document.getElementById('gallery-title').textContent = t.galleryTitle;
       document.getElementById('gallery-sub').textContent = t.gallerySub;
@@ -1452,7 +1481,6 @@
       document.getElementById('gallery-c2-title').textContent = t.galleryC2Title;
       document.getElementById('gallery-c2-desc').textContent = t.galleryC2Desc;
 
-      // Ubicación & Horarios
       document.getElementById('loc-tag').textContent = t.locTag;
       document.getElementById('loc-main-title').textContent = t.locMainTitle;
       document.getElementById('loc-main-sub').textContent = t.locMainSub;
@@ -1469,7 +1497,7 @@
         btn.textContent = t.categories[catKey];
       });
 
-      const waUrl = `https://wa.me/573222858658?text=${encodeURIComponent(t.whatsappMsg)}`;
+      const waUrl = `https://wa.me/5511953285680?text=${encodeURIComponent(t.whatsappMsg)}`;
       document.getElementById('nav-reserve-btn').href = waUrl;
       document.getElementById('floating-wa').href = waUrl;
 
@@ -1533,15 +1561,7 @@
         if (isExp && item.waMsg) {
           waText = item.waMsg[currentLang];
         } else {
-          const itemName = item.name[currentLang];
-          const itemPrice = item.price > 0 ? ` ($${item.price.toLocaleString('es-CO')} COP)` : '';
-          if (currentLang === 'en') {
-            waText = `Hello Meraki! I would like to order: ${itemName}${itemPrice}. Please let me know the details.`;
-          } else if (currentLang === 'pt') {
-            waText = `Olá Meraki! Gostaria de pedir: ${itemName}${itemPrice}. Poderia me orientar sobre o pedido?`;
-          } else {
-            waText = `¡Hola Meraki! Me gustaría pedir: ${itemName}${itemPrice}. ¿Me confirman para proceder con el pedido?`;
-          }
+          waText = 'Olá Angélica, quero meu diagnóstico gratuito';
         }
         const waMsgEncoded = encodeURIComponent(waText);
         const aspectClass = isExp ? 'aspect-[16/10]' : 'aspect-[4/5]';
@@ -1610,7 +1630,7 @@
             ` : '<div></div>'}
 
             <a 
-              href="https://wa.me/573222858658?text=${waMsgEncoded}" 
+              href="https://wa.me/5511953285680?text=${waMsgEncoded}" 
               target="_blank" 
               rel="noopener noreferrer" 
               class="bg-[#A44A27] hover:bg-[#C86B47] text-white text-xs px-4 py-2 rounded-full font-medium transition-colors shadow-sm ml-auto"
@@ -1622,7 +1642,6 @@
       `}).join('');
     }
 
-    // Initialize
     setLanguage('es');
     fetchExchangeRates();
   </script>
