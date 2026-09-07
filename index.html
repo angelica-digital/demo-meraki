@@ -99,32 +99,35 @@
       background: linear-gradient(135deg, #C86B47 0%, #A44A27 100%);
     }
 
-    /* BANNER SUPERIOR DE LA AGENCIA (ESTÁTICO) */
+    /* BANNER SUPERIOR DE LA AGENCIA ALINADO CON LOS TONOS DE MERAKI */
     .agency-banner {
       position: relative;
       width: 100%;
-      background: linear-gradient(90deg, #FD8B2F, #34D707, #FDD603);
+      background: linear-gradient(90deg, #2B1E1A, #A44A27, #C86B47, #2B1E1A);
       background-size: 200% auto;
-      animation: shimmer-text 5s linear infinite;
-      color: #120D0A;
+      animation: shimmer-text 6s linear infinite;
+      color: #FDF8F5;
       padding: 10px 16px;
       text-align: center;
       font-size: 13px;
-      font-weight: 700;
+      font-weight: 600;
       z-index: 1000;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
     }
+    .agency-banner i {
+      color: #FDD603;
+    }
     .agency-banner a {
-      color: #120D0A;
+      color: #FFF8E7;
       text-decoration: underline;
-      font-weight: 900;
+      font-weight: 700;
     }
     .agency-banner a:hover {
-      color: #FFF8E7;
+      color: #FDD603;
     }
     @keyframes shimmer-text {
       to { background-position: 200% center; }
