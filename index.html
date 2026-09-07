@@ -99,7 +99,7 @@
       background: linear-gradient(135deg, #C86B47 0%, #A44A27 100%);
     }
 
-    /* BANNER SUPERIOR DE LA AGENCIA */
+    /* BANNER SUPERIOR DE LA AGENCIA (ESTÁTICO) */
     .agency-banner {
       position: relative;
       width: 100%;
@@ -133,14 +133,14 @@
 </head>
 <body class="selection:bg-[#A44A27] selection:text-white">
 
-  <!-- BANNER SUPERIOR DE LA AGENCIA -->
+  <!-- ========== 1. BANNER SUPERIOR DE LA AGENCIA (ARRIBA DE TODO) ========== -->
   <div class="agency-banner">
     <i class="fas fa-lightbulb"></i>
     <span>Demo desarrollada por <a href="https://wa.me/5511953285680?text=Ol%C3%A1%20Ang%C3%A9lica%2C%20quero%20meu%20diagn%C3%B3stico%20gratuito" target="_blank" rel="noopener">Angélica Digital</a>. ¿Quieres una página web de alta conversión para tu restaurante?</span>
   </div>
 
-  <!-- NAVBAR -->
-  <header class="sticky top-0 z-40 bg-[#FDF8F5]/95 backdrop-blur-md border-b border-[#F0E5DE]">
+  <!-- ========== 2. NAVBAR (ESTÁTICO, DEBAJO DEL BANNER) ========== -->
+  <header class="relative z-40 bg-[#FDF8F5]/95 border-b border-[#F0E5DE]">
     <div class="max-w-6xl mx-auto px-4 py-2 flex items-center justify-between">
       <a href="#" class="flex items-center">
         <img src="logo merakimarron.png" alt="Meraki" class="h-16 sm:h-20 w-auto object-contain transition-transform hover:scale-105">
@@ -183,7 +183,7 @@
   </section>
 
   <!-- STICKY MENU NAVIGATION & SEARCH -->
-  <section id="menu" class="sticky top-[73px] sm:top-[81px] z-30 bg-[#FDF8F5]/95 backdrop-blur-md py-3 border-y border-[#F0E5DE]">
+  <section id="menu" class="sticky top-0 z-30 bg-[#FDF8F5]/95 backdrop-blur-md py-3 border-y border-[#F0E5DE]">
     <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row gap-3 items-center justify-between">
       <div class="flex items-center gap-2 overflow-x-auto w-full sm:w-auto pb-1 sm:pb-0 no-scrollbar" id="category-tabs">
         <button onclick="setCategory('all')" data-cat="all" class="cat-btn whitespace-nowrap px-4 py-1.5 rounded-full text-xs font-medium transition-all bg-[#2B1E1A] text-white shadow-sm">Todo</button>
@@ -1557,12 +1557,7 @@
         const isExp = item.isExp;
         const metaText = isExp ? (typeof item.meta === 'object' ? item.meta[currentLang] : item.meta) : '';
         
-        let waText = '';
-        if (isExp && item.waMsg) {
-          waText = item.waMsg[currentLang];
-        } else {
-          waText = 'Olá Angélica, quero meu diagnóstico gratuito';
-        }
+        let waText = 'Olá Angélica, quero meu diagnóstico gratuito';
         const waMsgEncoded = encodeURIComponent(waText);
         const aspectClass = isExp ? 'aspect-[16/10]' : 'aspect-[4/5]';
 
