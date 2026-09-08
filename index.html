@@ -1,1255 +1,1647 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="es" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Angélica Digital - Especialista em Presença Digital e Alta Conversão para Negócios Locais. Otimização de Google Maps, Landing Pages de alta conversão e ecossistemas web.">
-<meta name="keywords" content="Google Maps, Landing Pages, Marketing Local, Presença Digital, Google Meu Negócio, QR Code, NFC">
-<title>Angélica Digital | Especialista em Presença Digital & Alta Conversão</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<style>
-  /* ============== RESET & BASE ============== */
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth;scroll-padding-top:80px}
-  body{
-    font-family:'Inter',sans-serif;
-    background:#090d16;
-    color:#94a3b8;
-    line-height:1.6;
-    overflow-x:hidden;
-    min-height:100vh;
-    position:relative;
-  }
-  body::before{
-    content:'';
-    position:fixed;
-    inset:0;
-    background-image:
-      linear-gradient(rgba(129,140,248,0.04) 1px,transparent 1px),
-      linear-gradient(90deg,rgba(129,140,248,0.04) 1px,transparent 1px);
-    background-size:50px 50px;
-    z-index:-2;
-    pointer-events:none;
-  }
-  body::after{
-    content:'';
-    position:fixed;
-    top:-20%;
-    left:-10%;
-    width:60%;
-    height:60%;
-    background:radial-gradient(circle,rgba(129,140,248,0.15) 0%,transparent 60%);
-    z-index:-1;
-    pointer-events:none;
-    animation:floatGlow 12s ease-in-out infinite;
-  }
-  @keyframes floatGlow{
-    0%,100%{transform:translate(0,0) scale(1)}
-    50%{transform:translate(20%,10%) scale(1.2)}
-  }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meraki Restaurant & Experiences · Salento, Quindío</title>
+  <meta name="description" content="Local & Cosmo Experiences en Salento, Quindío. Cocina de autor, bebidas, tours y tradición.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome para los íconos oficiales -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  h1,h2,h3,h4{font-family:'Orbitron',sans-serif;color:#fff;line-height:1.2;font-weight:700}
-  a{text-decoration:none;color:inherit}
-  img{max-width:100%;display:block}
-  ul{list-style:none}
-  .container{width:min(1200px,92%);margin-inline:auto}
-
-  /* ============== HEADER ============== */
-  .header{
-    position:fixed;
-    top:0;left:0;right:0;
-    z-index:1000;
-    padding:14px 0;
-    background:rgba(9,13,22,0.75);
-    backdrop-filter:blur(20px) saturate(180%);
-    -webkit-backdrop-filter:blur(20px) saturate(180%);
-    border-bottom:1px solid rgba(129,140,248,0.2);
-    transition:all .3s ease;
-  }
-  .header.scrolled{
-    background:rgba(9,13,22,0.9);
-    border-bottom-color:rgba(129,140,248,0.4);
-    box-shadow:0 4px 30px rgba(129,140,248,0.15);
-  }
-  .nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:20px;
-  }
-  .logo{
-    font-family:'Orbitron',sans-serif;
-    font-size:1.3rem;
-    font-weight:900;
-    color:#fff;
-    display:flex;
-    align-items:center;
-    gap:10px;
-    letter-spacing:.5px;
-  }
-  .logo .icon-wrap{
-    width:38px;height:38px;
-    background:linear-gradient(135deg,#818cf8,#a855f7);
-    border-radius:10px;
-    display:grid;place-items:center;
-    box-shadow:0 0 20px rgba(168,85,247,0.5);
-    position:relative;
-  }
-  .logo .icon-wrap i{color:#fff;font-size:1.1rem}
-  .logo .neon-text{
-    background:linear-gradient(90deg,#818cf8,#fff,#c084fc);
-    background-size:200% auto;
-    -webkit-background-clip:text;
-    background-clip:text;
-    -webkit-text-fill-color:transparent;
-    animation:shine 3s linear infinite;
-  }
-  @keyframes shine{to{background-position:200% center}}
-
-  .menu{display:flex;gap:32px;align-items:center}
-  .menu a{
-    color:#94a3b8;
-    font-weight:500;
-    font-size:.95rem;
-    position:relative;
-    transition:color .3s;
-  }
-  .menu a:hover{color:#c084fc}
-  .menu a::after{
-    content:'';
-    position:absolute;
-    bottom:-6px;left:0;
-    width:0;height:2px;
-    background:linear-gradient(90deg,#818cf8,#a855f7);
-    transition:width .3s;
-    box-shadow:0 0 8px #a855f7;
-  }
-  .menu a:hover::after{width:100%}
-
-  .btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:10px;
-    padding:12px 22px;
-    border-radius:50px;
-    font-weight:600;
-    font-size:.95rem;
-    cursor:pointer;
-    border:none;
-    transition:all .3s ease;
-    font-family:inherit;
-    white-space:nowrap;
-  }
-
-  .btn-purple-accent{
-    background:linear-gradient(135deg,#a855f7,#7c3aed);
-    color:#fff;
-    box-shadow:0 4px 20px rgba(168,85,247,0.35);
-    position:relative;
-    overflow:hidden;
-  }
-  .btn-purple-accent:hover{
-    transform:translateY(-2px);
-    box-shadow:0 8px 30px rgba(168,85,247,0.5);
-  }
-
-  .btn-cyan{
-    background:linear-gradient(135deg,#818cf8,#a855f7);
-    color:#fff;
-    box-shadow:0 4px 25px rgba(168,85,247,0.4);
-    animation:pulseTech 2.5s infinite;
-  }
-  @keyframes pulseTech{
-    0%,100%{box-shadow:0 4px 25px rgba(168,85,247,0.4),0 0 0 0 rgba(168,85,247,0.6)}
-    50%{box-shadow:0 4px 25px rgba(168,85,247,0.4),0 0 0 18px rgba(168,85,247,0)}
-  }
-  .btn-cyan:hover{transform:translateY(-2px) scale(1.02)}
-
-  .btn-outline{
-    background:transparent;
-    border:1.5px solid rgba(168,85,247,0.5);
-    color:#c084fc;
-  }
-  .btn-outline:hover{
-    background:rgba(168,85,247,0.1);
-    border-color:#c084fc;
-    box-shadow:0 0 20px rgba(168,85,247,0.25);
-  }
-
-  .hamburger{
-    display:none;
-    background:none;
-    border:none;
-    color:#fff;
-    font-size:1.4rem;
-    cursor:pointer;
-    padding:6px;
-  }
-
-  /* ============== HERO ============== */
-  .hero{
-    padding:140px 0 80px;
-    position:relative;
-    overflow:hidden;
-  }
-  .hero-grid{
-    display:grid;
-    grid-template-columns:1.2fr .9fr;
-    gap:60px;
-    align-items:center;
-  }
-  .badge{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    padding:8px 16px;
-    background:rgba(168,85,247,0.1);
-    border:1px solid rgba(168,85,247,0.3);
-    border-radius:50px;
-    color:#c084fc;
-    font-size:.85rem;
-    font-weight:500;
-    margin-bottom:24px;
-    backdrop-filter:blur(10px);
-  }
-  .badge .dot{
-    width:8px;height:8px;
-    background:#a855f7;
-    border-radius:50%;
-    box-shadow:0 0 10px #a855f7;
-    animation:blink 1.5s infinite;
-  }
-  @keyframes blink{50%{opacity:.4}}
-
-  .hero h1{
-    font-size:clamp(2rem,5vw,3.6rem);
-    margin-bottom:24px;
-    font-weight:900;
-    letter-spacing:-1px;
-  }
-  .hero h1 .gradient{
-    background:linear-gradient(135deg,#818cf8 0%,#c084fc 50%,#a855f7 100%);
-    background-size:200% auto;
-    -webkit-background-clip:text;
-    background-clip:text;
-    -webkit-text-fill-color:transparent;
-    animation:shine 4s linear infinite;
-  }
-  .hero p.lead{
-    font-size:1.1rem;
-    color:#94a3b8;
-    margin-bottom:36px;
-    max-width:560px;
-  }
-  .hero-cta{
-    display:flex;
-    gap:16px;
-    flex-wrap:wrap;
-    margin-bottom:40px;
-  }
-  .hero-trust{
-    display:flex;
-    gap:30px;
-    flex-wrap:wrap;
-    padding-top:30px;
-    border-top:1px solid rgba(129,140,248,0.15);
-  }
-  .trust-item{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    font-size:.9rem;
-    color:#94a3b8;
-  }
-  .trust-item i{color:#c084fc;font-size:1.1rem}
-
-  .hero-visual{
-    position:relative;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:480px;
-  }
-  .hero-card{
-    background:linear-gradient(160deg,rgba(17,24,39,0.95),rgba(9,13,22,0.9));
-    border:1px solid rgba(168,85,247,0.25);
-    border-radius:24px;
-    padding:28px;
-    width:100%;
-    max-width:380px;
-    backdrop-filter:blur(20px);
-    box-shadow:0 30px 80px rgba(0,0,0,0.5),0 0 50px rgba(168,85,247,0.15);
-    position:relative;
-    animation:floatCard 6s ease-in-out infinite;
-  }
-  @keyframes floatCard{
-    0%,100%{transform:translateY(0)}
-    50%{transform:translateY(-15px)}
-  }
-  .gmb-mock{
-    background:#fff;
-    border-radius:12px;
-    padding:16px;
-    margin-bottom:18px;
-    color:#202124;
-  }
-  .gmb-header{
-    display:flex;
-    gap:12px;
-    align-items:center;
-    margin-bottom:12px;
-  }
-  .gmb-logo{
-    width:42px;height:42px;
-    background:linear-gradient(135deg,#a855f7,#818cf8);
-    border-radius:50%;
-    display:grid;place-items:center;
-    color:#fff;font-weight:bold;
-  }
-  .gmb-info h4{color:#202124;font-family:'Inter',sans-serif;font-size:.95rem;margin-bottom:2px}
-  .gmb-info span{font-size:.78rem;color:#5f6368}
-  .gmb-rating{
-    color:#fbbc05;
-    font-size:.85rem;
-    margin:8px 0;
-  }
-  .gmb-meta{
-    display:flex;
-    gap:8px;
-    font-size:.7rem;
-    color:#5f6368;
-    margin-bottom:8px;
-  }
-  .gmb-meta span{padding:3px 8px;background:#f1f3f4;border-radius:4px}
-  .gmb-actions{
-    display:flex;
-    gap:8px;
-    font-size:.72rem;
-  }
-  .gmb-actions span{
-    flex:1;
-    text-align:center;
-    padding:6px;
-    border:1px solid #dadce0;
-    border-radius:6px;
-    color:#9333ea;
-    font-weight:600;
-  }
-  .stats-row{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:8px;
-    margin-top:16px;
-  }
-  .stat-mini{
-    background:rgba(168,85,247,0.08);
-    border:1px solid rgba(168,85,247,0.2);
-    border-radius:10px;
-    padding:10px 6px;
-    text-align:center;
-  }
-  .stat-mini .num{
-    font-family:'Orbitron',sans-serif;
-    color:#c084fc;
-    font-weight:700;
-    font-size:1.05rem;
-    display:block;
-  }
-  .stat-mini .lbl{font-size:.65rem;color:#94a3b8;text-transform:uppercase;letter-spacing:.5px}
-
-  .float-icon{
-    position:absolute;
-    width:60px;height:60px;
-    background:linear-gradient(135deg,rgba(17,24,39,0.95),rgba(9,13,22,0.95));
-    border:1px solid rgba(168,85,247,0.3);
-    border-radius:16px;
-    display:grid;place-items:center;
-    backdrop-filter:blur(10px);
-    box-shadow:0 10px 30px rgba(0,0,0,0.5),0 0 20px rgba(168,85,247,0.25);
-    animation:floatIcon 5s ease-in-out infinite;
-  }
-  .float-icon i{font-size:1.4rem}
-  .float-icon.icon-1{top:10%;left:5%;animation-delay:0s}
-  .float-icon.icon-2{bottom:15%;right:0;animation-delay:1.5s}
-  .float-icon.icon-3{top:50%;left:-5%;animation-delay:3s}
-  @keyframes floatIcon{
-    0%,100%{transform:translateY(0) rotate(0deg)}
-    50%{transform:translateY(-12px) rotate(8deg)}
-  }
-
-  /* ============== SECTION TITLES ============== */
-  section{padding:80px 0;position:relative}
-  .section-header{
-    text-align:center;
-    max-width:750px;
-    margin:0 auto 50px;
-  }
-  .section-tag{
-    display:inline-block;
-    color:#c084fc;
-    font-size:.85rem;
-    font-weight:600;
-    letter-spacing:2px;
-    text-transform:uppercase;
-    margin-bottom:14px;
-  }
-  .section-header h2{
-    font-size:clamp(1.7rem,4vw,2.6rem);
-    margin-bottom:16px;
-    font-weight:800;
-  }
-  .section-header h2 .gradient{
-    background:linear-gradient(135deg,#818cf8,#c084fc);
-    -webkit-background-clip:text;
-    background-clip:text;
-    -webkit-text-fill-color:transparent;
-  }
-  .section-header p{color:#94a3b8;font-size:1.05rem}
-
-  /* ============== SERVICES ============== */
-  .services-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:24px;
-  }
-  .service-card{
-    background:linear-gradient(160deg,rgba(17,24,39,0.7),rgba(9,13,22,0.5));
-    border:1px solid rgba(168,85,247,0.15);
-    border-radius:20px;
-    padding:32px 26px;
-    position:relative;
-    overflow:hidden;
-    transition:all .4s ease;
-    backdrop-filter:blur(10px);
-  }
-  .service-card:hover{
-    transform:translateY(-8px);
-    border-color:rgba(168,85,247,0.5);
-    box-shadow:0 20px 60px rgba(168,85,247,0.2);
-  }
-  .service-icon{
-    width:60px;height:60px;
-    border-radius:14px;
-    display:grid;place-items:center;
-    margin-bottom:20px;
-    font-size:1.6rem;
-  }
-  .service-card:nth-child(1) .service-icon{background:rgba(234,67,53,0.15);color:#ea4335}
-  .service-card:nth-child(2) .service-icon{background:rgba(168,85,247,0.15);color:#c084fc}
-  .service-card:nth-child(3) .service-icon{background:rgba(251,188,5,0.15);color:#fbbc05}
-  .service-card:nth-child(4) .service-icon{background:rgba(168,85,247,0.15);color:#c084fc}
-  .service-card h3{font-size:1.2rem;margin-bottom:12px;font-family:'Inter',sans-serif;font-weight:700;color:#fff}
-  .service-card p{font-size:.92rem;line-height:1.6}
-  .service-card .features{margin-top:18px;padding-top:18px;border-top:1px solid rgba(168,85,247,0.12)}
-  .service-card .features li{font-size:.85rem;color:#94a3b8;margin-bottom:8px;display:flex;align-items:center;gap:8px}
-  .service-card .features i{color:#c084fc;font-size:.7rem}
-
-  /* ============== PORTFÓLIO E ECOSSISTEMAS REAIS ============== */
-  .sub-header-center{
-    text-align:center;
-    margin-bottom:30px;
-  }
-  .sub-header-center .sub-title{
-    font-size:1.5rem;
-    color:#fff;
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:10px;
-    font-family:'Orbitron',sans-serif;
-  }
-  .sub-header-center .sub-title i{color:#a855f7}
-
-  /* Filtros Centralizados */
-  .filter-bar{
-    display:flex;
-    justify-content:center;
-    gap:12px;
-    flex-wrap:wrap;
-    margin-bottom:40px;
-  }
-  .filter-btn{
-    background:rgba(17,24,39,0.8);
-    border:1px solid rgba(168,85,247,0.2);
-    color:#94a3b8;
-    padding:10px 22px;
-    border-radius:30px;
-    font-size:.88rem;
-    font-weight:600;
-    cursor:pointer;
-    transition:all .3s ease;
-    font-family:inherit;
-  }
-  .filter-btn:hover, .filter-btn.active{
-    background:linear-gradient(135deg,#a855f7,#7c3aed);
-    color:#fff;
-    border-color:#a855f7;
-    box-shadow:0 4px 15px rgba(168,85,247,0.35);
-  }
-
-  /* Grid de Cards */
-  .real-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
-    gap:24px;
-  }
-  .real-card{
-    background:linear-gradient(160deg,rgba(17,24,39,0.85),rgba(15,23,42,0.8));
-    border:1px solid rgba(168,85,247,0.25);
-    border-radius:20px;
-    padding:22px;
-    display:flex;
-    flex-direction:column;
-    position:relative;
-    box-shadow:0 10px 30px rgba(0,0,0,0.4);
-    transition:transform .3s ease, border-color .3s ease;
-  }
-  .real-card:hover{
-    transform:translateY(-6px);
-    border-color:#c084fc;
-    box-shadow:0 15px 40px rgba(168,85,247,0.2);
-  }
-  .real-card.hide{display:none}
-
-  .badge-live{
-    position:absolute;
-    top:14px;
-    right:14px;
-    background:rgba(16,185,129,0.15);
-    border:1px solid #10b981;
-    color:#10b981;
-    font-size:.72rem;
-    font-weight:700;
-    padding:4px 10px;
-    border-radius:20px;
-    display:flex;
-    align-items:center;
-    gap:6px;
-    z-index:2;
-  }
-  .badge-live .pulse{
-    width:6px;height:6px;
-    background:#10b981;
-    border-radius:50%;
-    box-shadow:0 0 8px #10b981;
-    animation:blink 1.2s infinite;
-  }
-
-  .real-preview{
-    width:100%;
-    height:220px;
-    border-radius:12px;
-    overflow:hidden;
-    margin-bottom:18px;
-    background:#111827;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-  }
-  .real-preview img{
-    width:500px;
-    height:500px;
-    max-width:100%;
-    object-fit:contain;
-  }
-
-  .real-info{
-    display:flex;
-    flex-direction:column;
-    flex-grow:1;
-  }
-  .real-info .cat-tag{
-    font-size:.75rem;
-    color:#c084fc;
-    font-weight:600;
-    text-transform:uppercase;
-    letter-spacing:1px;
-    margin-bottom:6px;
-  }
-  .real-info h3{
-    font-size:1.15rem;
-    color:#fff;
-    margin-bottom:8px;
-    font-family:'Inter',sans-serif;
-    font-weight:700;
-  }
-  .real-info p{
-    font-size:.88rem;
-    color:#94a3b8;
-    margin-bottom:16px;
-    flex-grow:1;
-  }
-  .real-tags{
-    display:flex;
-    gap:6px;
-    flex-wrap:wrap;
-    margin-bottom:20px;
-  }
-  .real-tags span{
-    font-size:.7rem;
-    background:rgba(168,85,247,0.1);
-    color:#c084fc;
-    padding:4px 8px;
-    border-radius:6px;
-    border:1px solid rgba(168,85,247,0.2);
-  }
-
-  /* ============== WHY ============== */
-  .why-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:24px;
-  }
-  .why-card{
-    background:linear-gradient(160deg,rgba(17,24,39,0.6),rgba(9,13,22,0.4));
-    border:1px solid rgba(168,85,247,0.12);
-    border-radius:18px;
-    padding:32px 24px;
-    text-align:center;
-    transition:all .4s ease;
-    backdrop-filter:blur(10px);
-  }
-  .why-card:hover{
-    transform:translateY(-6px);
-    border-color:rgba(168,85,247,0.4);
-    box-shadow:0 15px 40px rgba(168,85,247,0.15);
-  }
-  .why-icon{
-    width:80px;height:80px;
-    border-radius:50%;
-    background:rgba(168,85,247,0.08);
-    border:2px solid rgba(168,85,247,0.3);
-    display:grid;place-items:center;
-    margin:0 auto 20px;
-    font-size:2rem;
-    color:#c084fc;
-  }
-  .why-card h3{font-size:1.1rem;margin-bottom:10px;font-family:'Inter',sans-serif;color:#fff}
-  .why-card p{font-size:.9rem}
-
-  /* ============== FAQ ============== */
-  .faq-container{max-width:800px;margin:0 auto}
-  .faq-item{
-    background:linear-gradient(160deg,rgba(17,24,39,0.6),rgba(9,13,22,0.4));
-    border:1px solid rgba(168,85,247,0.15);
-    border-radius:14px;
-    margin-bottom:14px;
-    overflow:hidden;
-    backdrop-filter:blur(10px);
-  }
-  .faq-question{
-    width:100%;
-    padding:20px 24px;
-    background:transparent;
-    border:none;
-    color:#fff;
-    font-size:1rem;
-    font-weight:600;
-    font-family:inherit;
-    text-align:left;
-    cursor:pointer;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:16px;
-  }
-  .faq-question .ic{
-    width:32px;height:32px;
-    background:rgba(168,85,247,0.12);
-    border-radius:50%;
-    display:grid;place-items:center;
-    color:#c084fc;
-    transition:transform .3s ease;
-    flex-shrink:0;
-  }
-  .faq-item.active .faq-question .ic{transform:rotate(45deg);background:rgba(168,85,247,0.25)}
-  .faq-answer{
-    max-height:0;
-    overflow:hidden;
-    transition:max-height .4s ease;
-  }
-  .faq-answer-inner{padding:0 24px 22px;color:#94a3b8;font-size:.95rem;line-height:1.7}
-  .faq-item.active .faq-answer{max-height:300px}
-
-  /* ============== CTA SECTION ============== */
-  .cta-section{padding:80px 0}
-  .cta-box{
-    background:linear-gradient(135deg,rgba(168,85,247,0.18),rgba(129,140,248,0.05));
-    border:1px solid rgba(168,85,247,0.35);
-    border-radius:28px;
-    padding:60px 40px;
-    text-align:center;
-    position:relative;
-    overflow:hidden;
-    backdrop-filter:blur(20px);
-  }
-  .cta-box h2{font-size:clamp(1.6rem,3.5vw,2.4rem);margin-bottom:16px}
-  .cta-box p{color:#94a3b8;font-size:1.05rem;max-width:600px;margin:0 auto 32px}
-
-  /* ============== FOOTER ============== */
-  .footer{
-    background:#05070c;
-    border-top:1px solid rgba(168,85,247,0.2);
-    padding:60px 0 30px;
-  }
-  .footer-grid{
-    display:grid;
-    grid-template-columns:1.5fr 1fr 1fr;
-    gap:40px;
-    margin-bottom:40px;
-  }
-  .footer-col h4{color:#fff;font-size:1rem;margin-bottom:18px;font-family:'Inter',sans-serif;font-weight:700}
-  .footer-col p{font-size:.9rem;line-height:1.7;margin-bottom:16px}
-  .footer-col ul li{margin-bottom:10px;font-size:.9rem}
-  .footer-col ul a{color:#94a3b8;transition:color .3s}
-  .footer-col ul a:hover{color:#c084fc}
-  .social-links{display:flex;gap:12px;margin-top:16px}
-  .social-links a{
-    width:40px;height:40px;
-    border-radius:50%;
-    background:rgba(168,85,247,0.08);
-    border:1px solid rgba(168,85,247,0.2);
-    display:grid;place-items:center;
-    color:#c084fc;
-    transition:all .3s ease;
-  }
-  .social-links a:hover{background:#a855f7;color:#fff;transform:translateY(-3px)}
-  .footer-bottom{padding-top:30px;border-top:1px solid rgba(168,85,247,0.12);text-align:center;color:#64748b;font-size:.85rem}
-  .footer-bottom span{color:#c084fc}
-
-  /* ============== FLOATING WHATSAPP ============== */
-  .float-wa{
-    position:fixed;
-    bottom:24px;right:24px;
-    width:62px;height:62px;
-    background:linear-gradient(135deg,#10b981,#059669);
-    border-radius:50%;
-    display:grid;place-items:center;
-    color:#fff;
-    font-size:1.8rem;
-    box-shadow:0 10px 30px rgba(16,185,129,0.4);
-    z-index:999;
-    transition:all .3s ease;
-    animation:pulseWA 2s infinite;
-  }
-  .float-wa:hover{transform:scale(1.1) rotate(8deg)}
-  @keyframes pulseWA{
-    0%{box-shadow:0 10px 30px rgba(16,185,129,0.4),0 0 0 0 rgba(16,185,129,0.6)}
-    70%{box-shadow:0 10px 30px rgba(16,185,129,0.4),0 0 0 20px rgba(16,185,129,0)}
-    100%{box-shadow:0 10px 30px rgba(16,185,129,0.4),0 0 0 0 rgba(16,185,129,0)}
-  }
-
-  /* ============== RESPONSIVO ============== */
-  @media (max-width:900px){
-    .hero{padding:120px 0 60px}
-    .hero-grid{grid-template-columns:1fr;gap:50px}
-    .hero-visual{min-height:420px;order:-1}
-    .footer-grid{grid-template-columns:1fr;gap:30px}
-    .cta-box{padding:40px 24px}
-  }
-  @media (max-width:768px){
-    .menu{
-      position:fixed;
-      top:0;right:-100%;
-      width:80%;max-width:320px;
-      height:100vh;
-      background:rgba(9,13,22,0.98);
-      backdrop-filter:blur(20px);
-      flex-direction:column;
-      justify-content:center;
-      gap:30px;
-      transition:right .4s ease;
-      border-left:1px solid rgba(168,85,247,0.25);
-      padding:40px;
-    }
-    .menu.open{right:0}
-    .menu a{font-size:1.2rem}
-    .hamburger{display:block;z-index:1001}
-    .header-cta{display:none}
-    section{padding:60px 0}
-  }
-</style>
-</head>
-<body>
-
-<!-- ============== HEADER ============== -->
-<header class="header" id="header">
-  <div class="container">
-    <nav class="nav">
-      <a href="#" class="logo">
-        <span class="icon-wrap"><i class="fa-solid fa-bolt"></i></span>
-        <span class="neon-text">Angélica Digital</span>
-      </a>
-      <ul class="menu" id="menu">
-        <li><a href="#servicos" onclick="closeMenu()">Serviços</a></li>
-        <li><a href="#portfolio" onclick="closeMenu()">Portfólio</a></li>
-        <li><a href="#faq" onclick="closeMenu()">FAQ</a></li>
-      </ul>
-      <a href="https://wa.me/5511953285680?text=Ol%C3%A1%20Ang%C3%A9lica%2C%20quero%20meu%20diagn%C3%B3stico%20gratuito" target="_blank" rel="noopener" class="btn btn-purple-accent header-cta">
-        <i class="fa-brands fa-whatsapp"></i> Falar pelo WhatsApp
-      </a>
-      <button class="hamburger" id="hamburger" aria-label="Abrir menu"><i class="fa-solid fa-bars"></i></button>
-    </nav>
-  </div>
-</header>
-
-<!-- ============== HERO ============== -->
-<section class="hero">
-  <div class="container">
-    <div class="hero-grid">
-      <div class="hero-content">
-        <span class="badge"><span class="dot"></span> Estratégia de Presença Digital para Negócios Locais</span>
-        <h1>Aumente suas Vendas Locais <span class="gradient">Dominando o Google Maps</span> e Landing Pages de Alta Conversão</h1>
-        <p class="lead">Ajudo seu negócio a se destacar da concorrência, aparecer nos primeiros lugares do Google e converter visitas em clientes diários pelo WhatsApp.</p>
-        <div class="hero-cta">
-          <a href="https://wa.me/5511953285680?text=Ol%C3%A1%20Ang%C3%A9lica%2C%20quero%20meu%20diagn%C3%B3stico%20gratuito" target="_blank" rel="noopener" class="btn btn-cyan">
-            <i class="fa-solid fa-rocket"></i> SOLICITAR DIAGNÓSTICO GRATUITO
-          </a>
-          <a href="#servicos" class="btn btn-outline">
-            <i class="fa-solid fa-arrow-down"></i> Ver Serviços
-          </a>
-        </div>
-        <div class="hero-trust">
-          <div class="trust-item"><i class="fa-solid fa-shield-halved"></i> Sem compromisso</div>
-          <div class="trust-item"><i class="fa-solid fa-bolt"></i> Entrega rápida</div>
-          <div class="trust-item"><i class="fa-solid fa-headset"></i> Suporte direto</div>
-        </div>
-      </div>
-
-      <div class="hero-visual">
-        <div class="float-icon icon-1" style="color:#ea4335"><i class="fa-brands fa-google"></i></div>
-        <div class="float-icon icon-2" style="color:#fbbc05"><i class="fa-solid fa-star"></i></div>
-        <div class="float-icon icon-3" style="color:#c084fc"><i class="fa-solid fa-qrcode"></i></div>
-
-        <div class="hero-card">
-          <div class="gmb-mock">
-            <div class="gmb-header">
-              <div class="gmb-logo">A</div>
-              <div class="gmb-info">
-                <h4>Seu Negócio Local</h4>
-                <span><i class="fa-solid fa-star" style="color:#fbbc05"></i> 4.9 · 128 avaliações · Verificado</span>
-              </div>
-            </div>
-            <div class="gmb-rating">
-              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            </div>
-            <div class="gmb-meta">
-              <span>Empresa Otimizada</span>
-              <span>$$</span>
-              <span>Aberto</span>
-            </div>
-            <div class="gmb-actions">
-              <span><i class="fa-solid fa-route"></i> Indicações</span>
-              <span><i class="fa-solid fa-phone"></i> Ligar</span>
-              <span><i class="fa-solid fa-globe"></i> Site</span>
-            </div>
-          </div>
-          <div class="stats-row">
-            <div class="stat-mini"><span class="num">+250%</span><span class="lbl">Visitas</span></div>
-            <div class="stat-mini"><span class="num">Top 3</span><span class="lbl">Maps</span></div>
-            <div class="stat-mini"><span class="num">24/7</span><span class="lbl">Online</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============== SERVICES ============== -->
-<section id="servicos">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-tag">// Serviços Principais</span>
-      <h2>Soluções <span class="gradient">Projetadas para Crescer</span> Seu Negócio</h2>
-      <p>Estratégias práticas e eficazes para que sua empresa atraia clientes todos os dias pelo Google e redes sociais.</p>
-    </div>
-    <div class="services-grid">
-
-      <article class="service-card">
-        <div class="service-icon"><i class="fa-solid fa-map-location-dot"></i></div>
-        <h3>Otimização do Google Meu Negócio</h3>
-        <p>Apareça no Top 3 do Google Maps com sua ficha verificada, categorias corretas e catálogo carregado.</p>
-        <ul class="features">
-          <li><i class="fa-solid fa-check"></i> Verificação e configuração completa</li>
-          <li><i class="fa-solid fa-check"></i> Categorias e palavras-chave estratégicas</li>
-          <li><i class="fa-solid fa-check"></i> Gestão de avaliações e fotos</li>
-        </ul>
-      </article>
-
-      <article class="service-card">
-        <div class="service-icon"><i class="fa-solid fa-laptop-code"></i></div>
-        <h3>Landing Pages de Alta Conversão</h3>
-        <p>Páginas ultra rápidas, otimizadas para celular e projetadas para fechar vendas diretamente pelo WhatsApp.</p>
-        <ul class="features">
-          <li><i class="fa-solid fa-check"></i> Design moderno e responsivo</li>
-          <li><i class="fa-solid fa-check"></i> Velocidade de carregamento inferior a 2s</li>
-          <li><i class="fa-solid fa-check"></i> Integração com WhatsApp e Analytics</li>
-        </ul>
-      </article>
-
-      <article class="service-card">
-        <div class="service-icon"><i class="fa-solid fa-qrcode"></i></div>
-        <h3>Placas Inteligentes QR / NFC</h3>
-        <p>Estratégia física para coletar dezenas de avaliações de 5 estrelas diretamente do seu estabelecimento.</p>
-        <ul class="features">
-          <li><i class="fa-solid fa-check"></i> Placa personalizada com sua marca</li>
-          <li><i class="fa-solid fa-check"></i> QR + NFC prontos para usar</li>
-          <li><i class="fa-solid fa-check"></i> Aumento real de avaliações</li>
-        </ul>
-      </article>
-
-      <article class="service-card">
-        <div class="service-icon"><i class="fa-solid fa-bullseye"></i></div>
-        <h3>Posicionamento e Anúncios Locais</h3>
-        <p>Estratégias de atração direta para clientes da sua cidade com campanhas no Google Ads e Meta Ads.</p>
-        <ul class="features">
-          <li><i class="fa-solid fa-check"></i> SEO local avançado</li>
-          <li><i class="fa-solid fa-check"></i> Campanhas segmentadas por região</li>
-          <li><i class="fa-solid fa-check"></i> Relatórios mensais de resultados</li>
-        </ul>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============== PORTFOLIO COMPLETO ============== -->
-<section id="portfolio">
-  <div class="container">
-    
-    <div class="section-header">
-      <span class="section-tag">// Projetos Publicados</span>
-      <h2>Ecossistemas Digitais & <span class="gradient">Empresas Ativas</span></h2>
-      <p>Conheça plataformas web, soluções e marcas em operação desenvolvidas com foco em posicionamento e alta conversão.</p>
-    </div>
-
-    <div class="sub-header-center">
-      <div class="sub-title">
-        <i class="fa-solid fa-layer-group"></i>
-        <span>Soluções e Marcas Finalizadas</span>
-      </div>
-    </div>
-
-    <div class="filter-bar">
-      <button class="filter-btn active" onclick="filterPortfolio('all', event)">Todos</button>
-      <button class="filter-btn" onclick="filterPortfolio('gastronomia', event)">Gastronomia</button>
-      <button class="filter-btn" onclick="filterPortfolio('estudio', event)">Estúdio & Piercing</button>
-      <button class="filter-btn" onclick="filterPortfolio('coquetelaria', event)">Coquetelaria</button>
-      <button class="filter-btn" onclick="filterPortfolio('estetica', event)">Estética & Saúde</button>
-    </div>
-
-    <div class="real-grid">
-
-      <!-- CARD REAL 1: Tacobons -->
-      <article class="real-card" data-category="gastronomia">
-        <span class="badge-live"><span class="pulse"></span> Projeto No Ar</span>
-        <div class="real-preview">
-          <img src="logotacobons.png" alt="TacoBons Google Business e Cardápio" width="500" height="500">
-        </div>
-        <div class="real-info">
-          <span class="cat-tag">Gastronomia Mexicana</span>
-          <h3>TacoBons</h3>
-          <p>Otimização completa no Google Maps, catálogo digital interativo e canal direto de pedidos pelo WhatsApp.</p>
-          <div class="real-tags">
-            <span>Google Maps Top 1</span>
-            <span>Cardápio Digital</span>
-            <span>Pedidos WhatsApp</span>
-          </div>
-          <a href="https://tacobons.angelicadigital.com/" target="_blank" rel="noopener" class="btn btn-purple-accent">
-            <i class="fa-solid fa-arrow-up-right-from-square"></i> Visitar Site Oficial
-          </a>
-        </div>
-      </article>
-
-      <!-- CARD REAL 5: Meraki -->
-      <article class="real-card" data-category="gastronomia">
-        <span class="badge-live"><span class="pulse"></span> Projeto No Ar</span>
-        <div class="real-preview">
-          <img src="logomeraki.png" alt="Meraki Experiências" width="500" height="500">
-        </div>
-        <div class="real-info">
-          <span class="cat-tag">Gastronomia & Experiências</span>
-          <h3>Meraki</h3>
-          <p>Presença digital estratégica, otimização de ficha e ecossistema web voltado para alta conversão.</p>
-          <div class="real-tags">
-            <span>Google Maps Top 1</span>
-            <span>Cardápio Digital</span>
-            <span>Pedidos WhatsApp</span>
-          </div>
-          <a href="https://meraki.angelicadigital.com/" target="_blank" rel="noopener" class="btn btn-purple-accent">
-            <i class="fa-solid fa-arrow-up-right-from-square"></i> Visitar Site Oficial
-          </a>
-        </div>
-      </article>
-
-      <!-- CARD REAL 2: Bavel Piercing -->
-      <article class="real-card" data-category="estudio">
-        <span class="badge-live"><span class="pulse"></span> Projeto No Ar</span>
-        <div class="real-preview">
-          <img src="logobavelpiercing.png" alt="Bavel Piercing" width="500" height="500">
-        </div>
-        <div class="real-info">
-          <span class="cat-tag">Estúdio & Piercing</span>
-          <h3>Bavel Piercing</h3>
-          <p>E-commerce completo e otimização para estúdio físico, catálogo online e canal direto de atendimento.</p>
-          <div class="real-tags">
-            <span>Loja Online</span>
-            <span>Google Maps Top 1</span>
-            <span>Atendimento Direto</span>
-          </div>
-          <a href="https://bavelpiercing.com" target="_blank" rel="noopener" class="btn btn-purple-accent">
-            <i class="fa-solid fa-arrow-up-right-from-square"></i> Visitar Site Oficial
-          </a>
-        </div>
-      </article>
-
-      <!-- CARD REAL 3: ICE TROPICAL -->
-      <article class="real-card" data-category="coquetelaria">
-        <span class="badge-live"><span class="pulse"></span> Projeto No Ar</span>
-        <div class="real-preview">
-          <img src="logoicetropical.png" alt="ICE TROPICAL Cócteles" width="500" height="500">
-        </div>
-        <div class="real-info">
-          <span class="cat-tag">Cócteles & Nightlife</span>
-          <h3>ICE TROPICAL</h3>
-          <p>Cardápio digital interativo de coquetéis, estratégias de conversão e pedidos diretos via WhatsApp.</p>
-          <div class="real-tags">
-            <span>Cardápio Digital</span>
-            <span>Google Maps Top 1</span>
-            <span>Pedidos WhatsApp</span>
-          </div>
-          <a href="https://icetropical.com" target="_blank" rel="noopener" class="btn btn-purple-accent">
-            <i class="fa-solid fa-arrow-up-right-from-square"></i> Visitar Site Oficial
-          </a>
-        </div>
-      </article>
-
-      <!-- CARD REAL 4: Adriana Garcia -->
-      <article class="real-card" data-category="estetica">
-        <span class="badge-live"><span class="pulse"></span> Projeto No Ar</span>
-        <div class="real-preview">
-          <img src="logoadrianagarcia.png" alt="Adriana Garcia Estética" width="500" height="500">
-        </div>
-        <div class="real-info">
-          <span class="cat-tag">Estética & Saúde</span>
-          <h3>Adriana Garcia</h3>
-          <p>Presença digital completa, otimização de ficha local e estrutura estratégica para agendamento de serviços.</p>
-          <div class="real-tags">
-            <span>Google Maps Top 1</span>
-            <span>Agendamento Online</span>
-            <span>Atendimento Direto</span>
-          </div>
-          <a href="https://adrianagarcia.com" target="_blank" rel="noopener" class="btn btn-purple-accent">
-            <i class="fa-solid fa-arrow-up-right-from-square"></i> Visitar Site Oficial
-          </a>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
-
-<!-- ============== WHY CHOOSE US ============== -->
-<section>
-  <div class="container">
-    <div class="section-header">
-      <span class="section-tag">// Diferenciais</span>
-      <h2>Por que <span class="gradient">Trabalhar Comigo?</span></h2>
-      <p>Foco total em resultados práticos, aumento de vendas e visibilidade real para sua empresa.</p>
-    </div>
-    <div class="why-grid">
-      <div class="why-card">
-        <div class="why-icon"><i class="fa-solid fa-chart-line"></i></div>
-        <h3>Foco em Conversão</h3>
-        <p>Não crio apenas páginas bonitas, crio estruturas pensadas para transformar visitantes em clientes compradores.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon"><i class="fa-solid fa-bolt"></i></div>
-        <h3>Agilidade na Entrega</h3>
-        <p>Projetos executados com precisão e rapidez para que seu negócio comece a faturar o quanto antes.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon"><i class="fa-solid fa-comments"></i></div>
-        <h3>Atendimento Direto</h3>
-        <p>Comunicação transparente e sem intermediários durante todo o processo de desenvolvimento.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============== FAQ ============== -->
-<section id="faq">
-  <div class="container">
-    <div class="section-header">
-      <span class="section-tag">// Tira Dúvidas</span>
-      <h2>Perguntas <span class="gradient">Frequentes</span></h2>
-      <p>Esclareça suas principais dúvidas sobre o processo e os serviços fornecidos.</p>
-    </div>
-    <div class="faq-container">
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          <span>Quanto tempo leva para otimizar meu Google Meu Negócio?</span>
-          <span class="ic"><i class="fa-solid fa-plus"></i></span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            A otimização inicial é concluída em até 5 dias úteis. Os resultados de posicionamento no Google Maps começam a aparecer gradualmente nas semanas seguintes conforme a relevância da ficha aumenta.
-          </div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          <span>O que é preciso para criar uma Landing Page?</span>
-          <span class="ic"><i class="fa-solid fa-plus"></i></span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            Preciso apenas das informações básicas do seu negócio, fotos dos serviços/produtos e do número de WhatsApp para onde as vendas serão direcionadas. Eu cuido de toda a estrutura e texto de conversão.
-          </div>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          <span>Como funcionam as placas com QR e NFC?</span>
-          <span class="ic"><i class="fa-solid fa-plus"></i></span>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            São placas físicas que você coloca no balcão ou nas mesas. Quando o cliente aproxima o celular (NFC) ou aponta a câmera (QR Code), ele é direcionado imediatamente para a página de avaliação 5 estrelas do seu Google.
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============== CTA SECTION ============== -->
-<section class="cta-section">
-  <div class="container">
-    <div class="cta-box">
-      <h2>Pronto para <span class="gradient">Dominar a Presença Digital</span> do seu Negócio?</h2>
-      <p>Solicite seu diagnóstico gratuito e descubra como colocar sua empresa no Top 3 do Google Maps ainda esta semana.</p>
-      <a href="https://wa.me/5511953285680?text=Ol%C3%A1%20Ang%C3%A9lica%2C%20quero%20meu%20diagn%C3%B3stico%20gratuito" target="_blank" rel="noopener" class="btn btn-cyan">
-        <i class="fa-brands fa-whatsapp"></i> Chamar no WhatsApp Agora
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ============== FOOTER ============== -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-col">
-        <a href="#" class="logo" style="margin-bottom:16px;">
-          <span class="icon-wrap"><i class="fa-solid fa-bolt"></i></span>
-          <span class="neon-text">Angélica Digital</span>
-        </a>
-        <p>Especialista em presença digital, otimização do Google Meu Negócio e ecossistemas web de alta conversão para empresas locais.</p>
-        <div class="social-links">
-          <a href="https://wa.me/5511953285680" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4>Navegação</h4>
-        <ul>
-          <li><a href="#servicos">Serviços</a></li>
-          <li><a href="#portfolio">Portfólio</a></li>
-          <li><a href="#faq">FAQ</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contato</h4>
-        <ul>
-          <li><i class="fa-solid fa-envelope" style="color:#a855f7;margin-right:8px;"></i> contato@angelicadigital.com</li>
-          <li><i class="fa-brands fa-whatsapp" style="color:#a855f7;margin-right:8px;"></i> +55 11 95328-5680</li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 <span>Angélica Digital</span>. Todos os direitos reservados.</p>
-    </div>
-  </div>
-</footer>
-
-<!-- ============== FLOATING WHATSAPP ============== -->
-<a href="https://wa.me/5511953285680?text=Ol%C3%A1%20Ang%C3%A9lica%2C%20quero%20meu%20diagn%C3%B3stico%20gratuito" target="_blank" rel="noopener" class="float-wa" aria-label="Falar no WhatsApp">
-  <i class="fa-brands fa-whatsapp"></i>
-</a>
-
-<!-- ============== SCRIPTS ============== -->
-<script>
-  // Menu Mobile
-  const hamburger = document.getElementById('hamburger');
-  const menu = document.getElementById('menu');
-
-  hamburger.addEventListener('click', () => {
-    menu.classList.toggle('open');
-    const icon = hamburger.querySelector('i');
-    if (menu.classList.contains('open')) {
-      icon.classList.remove('fa-bars');
-      icon.classList.add('fa-xmark');
-    } else {
-      icon.classList.remove('fa-xmark');
-      icon.classList.add('fa-bars');
-    }
-  });
-
-  function closeMenu() {
-    menu.classList.remove('open');
-    const icon = hamburger.querySelector('i');
-    if (icon) {
-      icon.classList.remove('fa-xmark');
-      icon.classList.add('fa-bars');
-    }
-  }
-
-  // Header Scroll
-  window.addEventListener('scroll', () => {
-    const header = document.getElementById('header');
-    if (window.scrollY > 50) {
-      header.classList.add('scrolled');
-    } else {
-      header.classList.remove('scrolled');
-    }
-  });
-
-  // Filtro de Portfólio
-  function filterPortfolio(category, event) {
-    const cards = document.querySelectorAll('.real-card');
-    const buttons = document.querySelectorAll('.filter-btn');
-
-    buttons.forEach(btn => btn.classList.remove('active'));
-    event.currentTarget.classList.add('active');
-
-    cards.forEach(card => {
-      if (category === 'all' || card.getAttribute('data-category') === category) {
-        card.classList.remove('hide');
-      } else {
-        card.classList.add('hide');
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            meraki: {
+              bg: '#FDF8F5',
+              card: '#FFFFFF',
+              border: '#F0E5DE',
+              primary: '#A44A27',
+              dark: '#2B1E1A',
+              muted: '#6E5D57',
+              accent: '#C86B47',
+            }
+          },
+          fontFamily: {
+            serif: ['"Playfair Display"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          }
+        }
       }
-    });
-  }
-
-  // FAQ Accordion
-  function toggleFaq(button) {
-    const item = button.parentElement;
-    const isActive = item.classList.contains('active');
-
-    document.querySelectorAll('.faq-item').forEach(faq => {
-      faq.classList.remove('active');
-    });
-
-    if (!isActive) {
-      item.classList.add('active');
     }
-  }
-</script>
+  </script>
+
+  <style>
+    body {
+      background-color: #FDF8F5;
+      color: #2B1E1A;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    .footer-social-circle {
+      width: 44px;
+      height: 44px;
+      background: #3A2A25;
+      border: 1px solid #523C35;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #F0E5DE;
+      font-size: 18px;
+      transition: all 0.3s ease;
+    }
+    .footer-social-circle:hover {
+      background: #A44A27;
+      color: white;
+      transform: translateY(-3px);
+      border-color: #A44A27;
+    }
+    .whatsapp-float-btn {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: linear-gradient(135deg, #A44A27 0%, #C86B47 100%);
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      box-shadow: 0 8px 24px rgba(164, 74, 39, 0.4);
+      z-index: 9998;
+      transition: all 0.3s ease;
+      animation: pulse-float 2s ease-in-out infinite;
+    }
+    @keyframes pulse-float {
+      0%, 100% { transform: scale(1); box-shadow: 0 8px 24px rgba(164, 74, 39, 0.4); }
+      50% { transform: scale(1.08); box-shadow: 0 12px 35px rgba(200, 107, 71, 0.6); }
+    }
+    .whatsapp-float-btn:hover {
+      transform: scale(1.12);
+      background: linear-gradient(135deg, #C86B47 0%, #A44A27 100%);
+    }
+
+    /* BANNER SUPERIOR DE LA AGENCIA ALINADO CON LOS TONOS DE MERAKI */
+    .agency-banner {
+      position: relative;
+      width: 100%;
+      background: linear-gradient(90deg, #2B1E1A, #A44A27, #C86B47, #2B1E1A);
+      background-size: 200% auto;
+      animation: shimmer-text 6s linear infinite;
+      color: #FDF8F5;
+      padding: 10px 16px;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 600;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .agency-banner i {
+      color: #FDD603;
+    }
+    .agency-banner a {
+      color: #FFF8E7;
+      text-decoration: underline;
+      font-weight: 700;
+    }
+    .agency-banner a:hover {
+      color: #FDD603;
+    }
+    @keyframes shimmer-text {
+      to { background-position: 200% center; }
+    }
+  </style>
+</head>
+<body class="selection:bg-[#A44A27] selection:text-white">
+
+  <!-- ========== 1. BANNER SUPERIOR DE LA AGENCIA (ARRIBA DE TODO) ========== -->
+  <div class="agency-banner">
+    <i class="fas fa-lightbulb"></i>
+    <span>Demo desarrollada por <a href="https://wa.me/5511953285680?text=Ol%C3%A1%20Ang%C3%A9lica%2C%20quero%20meu%20diagn%C3%B3stico%20gratuito" target="_blank" rel="noopener">Angélica Digital</a>. ¿Quieres una página web de alta conversión para tu restaurante?</span>
+  </div>
+
+  <!-- ========== 2. NAVBAR (ESTÁTICO, DEBAJO DEL BANNER) ========== -->
+  <header class="relative z-40 bg-[#FDF8F5]/95 border-b border-[#F0E5DE]">
+    <div class="max-w-6xl mx-auto px-4 py-2 flex items-center justify-between">
+      <a href="#" class="flex items-center">
+        <img src="logo merakimarron.png" alt="Meraki" class="h-16 sm:h-20 w-auto object-contain transition-transform hover:scale-105">
+      </a>
+
+      <div class="flex items-center gap-3">
+        <div class="flex bg-[#F0E5DE]/70 rounded-full p-1 text-xs font-semibold">
+          <button onclick="setLanguage('es')" id="btn-es" class="px-2.5 py-1 rounded-full uppercase transition-all bg-[#A44A27] text-white shadow-sm">ES</button>
+          <button onclick="setLanguage('en')" id="btn-en" class="px-2.5 py-1 rounded-full uppercase transition-all text-[#6E5D57] hover:text-[#2B1E1A]">EN</button>
+          <button onclick="setLanguage('pt')" id="btn-pt" class="px-2.5 py-1 rounded-full uppercase transition-all text-[#6E5D57] hover:text-[#2B1E1A]">PT</button>
+        </div>
+
+        <a id="nav-reserve-btn" href="https://wa.me/5511953285680?text=Ol%C3%A1%20Ang%C3%A9lica%2C%20quero%20meu%20diagn%C3%B3stico%20gratuito" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex bg-[#A44A27] hover:bg-[#C86B47] text-white px-4 py-2 rounded-full text-xs font-medium tracking-wide transition-colors">
+          Reservar Mesa
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="px-4 pt-12 pb-8 text-center max-w-3xl mx-auto">
+    <span id="hero-badge" class="inline-block text-[11px] uppercase tracking-[0.15em] text-[#A44A27] font-semibold mb-3 px-3 py-1 rounded-full bg-[#A44A27]/10">
+      Salento, Quindío · Experiencia Gastronómica &amp; Cultural
+    </span>
+    <h1 id="hero-title" class="font-serif text-4xl sm:text-5xl lg:text-6xl text-[#A44A27] tracking-tight font-normal mb-4">
+      Local &amp; Cosmo Experiences
+    </h1>
+    <p id="hero-subtitle" class="text-[#6E5D57] text-base sm:text-lg mb-6 leading-relaxed font-light">
+      Cocina de autor, cafés especiales, bienestar botánico y experiencias exclusivas en Salento.
+    </p>
+
+    <div class="flex items-center justify-center gap-3">
+      <a id="btn-view-menu" href="#menu" class="bg-[#A44A27] hover:bg-[#C86B47] text-white px-6 py-3 rounded-full text-sm font-medium transition-all shadow-sm">
+        Ver Menú &amp; Experiencias
+      </a>
+      <a id="btn-how-to-get" href="https://share.google/dESclTaohLZJgrkCX" target="_blank" rel="noopener noreferrer" class="border border-[#F0E5DE] bg-white/60 hover:bg-[#F0E5DE]/40 text-[#2B1E1A] px-6 py-3 rounded-full text-sm font-medium transition-colors">
+        Abrir en Google Maps
+      </a>
+    </div>
+  </section>
+
+  <!-- STICKY MENU NAVIGATION & SEARCH -->
+  <section id="menu" class="sticky top-0 z-30 bg-[#FDF8F5]/95 backdrop-blur-md py-3 border-y border-[#F0E5DE]">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row gap-3 items-center justify-between">
+      <div class="flex items-center gap-2 overflow-x-auto w-full sm:w-auto pb-1 sm:pb-0 no-scrollbar" id="category-tabs">
+        <button onclick="setCategory('all')" data-cat="all" class="cat-btn whitespace-nowrap px-4 py-1.5 rounded-full text-xs font-medium transition-all bg-[#2B1E1A] text-white shadow-sm">Todo</button>
+        <button onclick="setCategory('experiencias')" data-cat="experiencias" class="cat-btn whitespace-nowrap px-4 py-1.5 rounded-full text-xs font-medium transition-all bg-white text-[#6E5D57] hover:bg-[#FDF8F5] border border-[#F0E5DE]">Experiencias</button>
+        <button onclick="setCategory('entradas')" data-cat="entradas" class="cat-btn whitespace-nowrap px-4 py-1.5 rounded-full text-xs font-medium transition-all bg-white text-[#6E5D57] hover:bg-[#FDF8F5] border border-[#F0E5DE]">Entradas</button>
+        <button onclick="setCategory('fuertes')" data-cat="fuertes" class="cat-btn whitespace-nowrap px-4 py-1.5 rounded-full text-xs font-medium transition-all bg-white text-[#6E5D57] hover:bg-[#FDF8F5] border border-[#F0E5DE]">Fuertes</button>
+        <button onclick="setCategory('calientes')" data-cat="calientes" class="cat-btn whitespace-nowrap px-4 py-1.5 rounded-full text-xs font-medium transition-all bg-white text-[#6E5D57] hover:bg-[#FDF8F5] border border-[#F0E5DE]">Bebidas Calientes</button>
+        <button onclick="setCategory('frias')" data-cat="frias" class="cat-btn whitespace-nowrap px-4 py-1.5 rounded-full text-xs font-medium transition-all bg-white text-[#6E5D57] hover:bg-[#FDF8F5] border border-[#F0E5DE]">Bebidas Frías</button>
+      </div>
+
+      <div class="w-full sm:w-64">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Buscar plato o experiencia..."
+          oninput="handleSearch(this.value)"
+          class="w-full bg-white border border-[#F0E5DE] rounded-full px-4 py-1.5 text-xs text-[#2B1E1A] placeholder-[#6E5D57]/60 focus:outline-none focus:border-[#A44A27]"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- CANNABIS NOTICE BANNER -->
+  <div class="max-w-6xl mx-auto px-4 mt-6">
+    <div class="bg-[#A44A27]/5 border border-[#A44A27]/20 rounded-2xl p-3.5 flex items-center justify-between text-xs text-[#A44A27]">
+      <div class="flex items-center gap-2">
+        <span>🌿</span>
+        <span id="cannabis-text" class="font-medium">Puedes adicionar Gotas de Cannabis a cualquier bebida</span>
+      </div>
+      <span class="font-bold whitespace-nowrap" id="cannabis-price">+$5.000 COP</span>
+    </div>
+  </div>
+
+  <!-- MENU GRID -->
+  <main class="max-w-6xl mx-auto px-4 py-8">
+    <div id="menu-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Items populated via JS -->
+    </div>
+  </main>
+
+  <!-- TRAVELER FAQ SECTION -->
+  <section class="bg-white border-t border-[#F0E5DE] py-12 px-4">
+    <div class="max-w-3xl mx-auto">
+      <h2 id="faq-title" class="font-serif text-2xl sm:text-3xl text-[#A44A27] text-center mb-8 font-medium">
+        Información para Viajeros y Hoteles
+      </h2>
+      <div class="space-y-4" id="faq-list">
+        <!-- FAQs populated via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- RESTAURANT ATMOSPHERE GALLERY SECTION -->
+  <section class="bg-[#FDF8F5] py-16 px-4 border-t border-[#F0E5DE]">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-10">
+        <span id="gallery-tag" class="text-xs uppercase tracking-[0.2em] text-[#A44A27] font-semibold mb-2 block">Atmósfera &amp; Tradición</span>
+        <h2 id="gallery-title" class="font-serif text-3xl sm:text-4xl text-[#2B1E1A] font-normal">El Espacio Meraki</h2>
+        <p id="gallery-sub" class="text-xs text-[#6E5D57] mt-2">Un refugio de cocina de autor y bienestar en el corazón de Salento.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-2xl border border-[#F0E5DE] overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+          <div class="aspect-[4/3] bg-[#F0E5DE]/40 overflow-hidden relative">
+            <img src="restaurante1.png" alt="Meraki Salento Ambiente" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+          </div>
+          <div class="p-4 text-center">
+            <h3 id="gallery-c1-title" class="font-serif text-base text-[#2B1E1A] font-medium">Fachada &amp; Terraza Meraki</h3>
+            <p id="gallery-c1-desc" class="text-xs text-[#6E5D57] mt-1 font-light">Un espacio acogedor con calidez artesanal en Salento.</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-[#F0E5DE] overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+          <div class="aspect-[4/3] bg-[#F0E5DE]/40 overflow-hidden relative">
+            <img src="restaurante2.png" alt="Meraki Salento Interior" class="w-full h-full object-cover transition-transform duration-500 hover:scale-105">
+          </div>
+          <div class="p-4 text-center">
+            <h3 id="gallery-c2-title" class="font-serif text-base text-[#2B1E1A] font-medium">Atmósfera Nocturna</h3>
+            <p id="gallery-c2-desc" class="text-xs text-[#6E5D57] mt-1 font-light">Iluminación íntima y detalles pensados para cada experiencia.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UBICACIÓN & HORARIOS INTERACTIVE SECTION -->
+  <section class="bg-[#2B1E1A] text-[#FDF8F5] py-16 px-4">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-12">
+        <span id="loc-tag" class="text-xs uppercase tracking-[0.2em] text-[#C86B47] font-semibold mb-2 block">Encuéntranos</span>
+        <h2 id="loc-main-title" class="font-serif text-3xl sm:text-4xl text-white font-normal">Ubicación &amp; Horarios</h2>
+        <p id="loc-main-sub" class="text-xs text-[#F0E5DE]/70 mt-2">Visítanos en Salento, Quindío. Atendemos a viajeros, locales y huéspedes en convenio.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+        <!-- Info Cards -->
+        <div class="space-y-4 lg:col-span-1">
+          <div class="bg-[#3A2A25] border border-[#523C35] rounded-2xl p-5 shadow-sm relative overflow-hidden flex items-start gap-4">
+            <div class="absolute left-0 top-0 bottom-0 w-1.5 bg-[#A44A27]"></div>
+            <div>
+              <h3 id="loc-card-title1" class="text-xs uppercase tracking-wider text-[#C86B47] font-semibold mb-1">Nuestra Ubicación</h3>
+              <p class="text-sm text-[#FDF8F5] font-medium">Cra. 3 #5-56</p>
+              <p id="loc-card-sub1" class="text-xs text-[#F0E5DE]/80">Salento, Quindío, Colombia</p>
+            </div>
+          </div>
+
+          <div class="bg-[#3A2A25] border border-[#523C35] rounded-2xl p-5 shadow-sm relative overflow-hidden flex items-start gap-4">
+            <div class="absolute left-0 top-0 bottom-0 w-1.5 bg-[#A44A27]"></div>
+            <div>
+              <h3 id="loc-card-title2" class="text-xs uppercase tracking-wider text-[#C86B47] font-semibold mb-1">Horarios de Atención</h3>
+              <p id="loc-card-days" class="text-sm text-[#FDF8F5] font-medium">Lunes a Domingo</p>
+              <p id="loc-card-hours" class="text-xs text-[#F0E5DE]/80">2:00 PM – 10:00 PM</p>
+            </div>
+          </div>
+
+          <div class="bg-[#3A2A25] border border-[#523C35] rounded-2xl p-5 shadow-sm relative overflow-hidden flex items-start gap-4">
+            <div class="absolute left-0 top-0 bottom-0 w-1.5 bg-[#A44A27]"></div>
+            <div>
+              <h3 id="loc-card-title3" class="text-xs uppercase tracking-wider text-[#C86B47] font-semibold mb-1">Contacto Directo</h3>
+              <p class="text-xs text-[#F0E5DE]/80">WhatsApp: +55 11 95328-5680</p>
+              <p class="text-xs text-[#F0E5DE]/80 mt-0.5">Instagram: @merakilocal.cosmo</p>
+            </div>
+          </div>
+
+          <a 
+            id="loc-map-btn"
+            href="https://share.google/dESclTaohLZJgrkCX" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            class="w-full bg-[#A44A27] hover:bg-[#C86B47] text-white text-xs font-semibold py-3.5 px-6 rounded-full transition-colors flex items-center justify-center gap-2 shadow-md"
+          >
+            <span>Cómo llegar en Google Maps</span>
+            <span>→</span>
+          </a>
+        </div>
+
+        <!-- Map Frame -->
+        <div class="lg:col-span-2 bg-[#3A2A25] border border-[#523C35] rounded-2xl p-3 shadow-md h-[400px] flex flex-col justify-center items-center relative overflow-hidden">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.6625!2d-75.5755!3d4.6375!2m3!1f0!2f0!3f0!3m2!1f1024!2f768!4f13.1!3m3!1m2!1s0x8e38a3d123456789%3A0x123456789abcdef!2sCra.+3+%235-56%2C+Salento%2C+Quind%C3%ado%2C+Colombia!5e0!3m2!1ses!2sco!4v1650000000000!5m2!1ses!2sco" 
+            width="100%" 
+            height="100%" 
+            style="border:0; border-radius: 12px;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            class="w-full h-full object-cover"
+          ></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#211612] text-[#FDF8F5] pt-12 pb-8 px-4 border-t border-[#3A2A25]">
+    <div class="max-w-4xl mx-auto text-center flex flex-col items-center justify-center">
+      
+      <div class="flex items-center gap-4 mb-8">
+        <a href="https://instagram.com/merakilocal.cosmo" target="_blank" rel="noopener noreferrer" class="footer-social-circle" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/Merakiloverscolombia" target="_blank" rel="noopener noreferrer" class="footer-social-circle" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://wa.me/5511953285680?text=Ol%C3%A1%20Ang%C3%A9lica%2C%20quero%20meu%20diagn%C3%B3stico%20gratuito" target="_blank" rel="noopener noreferrer" class="footer-social-circle" aria-label="WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+      </div>
+
+      <div class="mb-6">
+        <img src="logo merakibranco.png" alt="Meraki" class="h-16 sm:h-20 w-auto object-contain mx-auto">
+      </div>
+
+      <div class="w-full border-t border-[#3A2A25] my-6"></div>
+
+      <div class="text-xs text-[#F0E5DE]/80 space-y-2">
+        <div>Diseñado con <span class="text-[#C86B47]">🔥</span> potencia 
+          <a href="https://wa.me/5511953285680?text=Ol%C3%A1%20Ang%C3%A9lica%2C%20quero%20meu%20diagn%C3%B3stico%20gratuito" target="_blank" rel="noopener" class="text-white font-semibold underline ml-1">Angélica Digital</a>
+        </div>
+        <div class="text-[#F0E5DE]/50">&copy; 2026 Meraki. Todos los derechos reservados.</div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- FLOATING WHATSAPP BUTTON -->
+  <a 
+    id="floating-wa"
+    href="https://wa.me/5511953285680?text=Ol%C3%A1%20Ang%C3%A9lica%2C%20quero%20meu%20diagn%C3%B3stico%20gratuito"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="whatsapp-float-btn"
+    aria-label="WhatsApp"
+  >
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- APP LOGIC -->
+  <script>
+    let currentLang = 'es';
+    let currentCategory = 'all';
+    let currentSearch = '';
+
+    let RATES = {
+      USD: 4000,
+      BRL: 750
+    };
+
+    async function fetchExchangeRates() {
+      try {
+        const res = await fetch('https://open.er-api.com/v6/latest/COP');
+        const data = await res.json();
+        if (data && data.rates) {
+          if (data.rates.USD) RATES.USD = 1 / data.rates.USD;
+          if (data.rates.BRL) RATES.BRL = 1 / data.rates.BRL;
+          renderMenu();
+        }
+      } catch (error) {
+        console.warn('Tasas por defecto:', error);
+      }
+    }
+
+    const DICTIONARY = {
+      es: {
+        badge: 'Salento, Quindío · Experiencia Gastronómica & Cultural',
+        heroTitle: 'Local & Cosmo Experiences',
+        heroSubtitle: 'Cocina de autor, cafés especiales, bienestar botánico y experiencias exclusivas en Salento.',
+        viewMenu: 'Ver Menú & Experiencias',
+        howToGet: 'Abrir en Google Maps',
+        reserve: 'Reservar Mesa',
+        searchPlaceholder: 'Buscar plato o experiencia...',
+        cannabisText: 'Puedes adicionar Gotas de Cannabis a cualquier bebida',
+        categories: {
+          all: 'Todo',
+          experiencias: 'Experiencias',
+          entradas: 'Entradas',
+          fuertes: 'Fuertes',
+          calientes: 'Bebidas Calientes',
+          frias: 'Bebidas Frías'
+        },
+        faqTitle: 'Información para Viajeros y Hoteles',
+        faqs: [
+          { q: '¿Cómo reservar una de las Experiencias Meraki?', a: 'Puedes reservar directamente por WhatsApp con anticipación para asegurar disponibilidad de cupos y horarios.' },
+          { q: '¿Los hoteles y alojamientos pueden ofrecer estas experiencias a sus huéspedes?', a: 'Sí, contamos con convenios para hoteles que deseen enriquecer la estadía de sus visitantes con nuestras experiencias gastronómicas y botánicas.' },
+          { q: '¿Qué métodos de pago aceptan?', a: 'Aceptamos tarjetas internacionales (Visa, Mastercard, Amex), transferencias digitales y efectivo COP.' },
+          { q: '¿Tienen opciones vegetarianas en la carta?', a: 'Sí, disponemos de opciones adaptables tanto en el menú regular como en la experiencia gastronómica.' }
+        ],
+        galleryTag: 'Atmósfera & Tradición',
+        galleryTitle: 'El Espacio Meraki',
+        gallerySub: 'Un refugio de cocina de autor y bienestar en el corazón de Salento.',
+        galleryC1Title: 'Fachada & Terraza Meraki',
+        galleryC1Desc: 'Un espacio acogedor con calidez artesanal en Salento.',
+        galleryC2Title: 'Atmósfera Nocturna',
+        galleryC2Desc: 'Iluminación íntima y detalles pensados para cada experiencia.',
+        locTag: 'Encuéntranos',
+        locMainTitle: 'Ubicación & Horarios',
+        locMainSub: 'Visítanos en Salento, Quindío. Atendemos a viajeros, locales y huéspedes en convenio.',
+        locCardTitle1: 'Nuestra Ubicación',
+        locCardSub1: 'Salento, Quindío, Colombia',
+        locCardTitle2: 'Horarios de Atención',
+        locCardDays: 'Lunes a Domingo',
+        locCardHours: '2:00 PM – 10:00 PM',
+        locCardTitle3: 'Contacto Directo',
+        locMapBtn: 'Cómo llegar en Google Maps →',
+        whatsappMsg: 'Olá Angélica, quero meu diagnóstico gratuito',
+        bookExp: 'Reservar Experiencia',
+        orderBtn: 'Pedir →',
+        tagExp: 'Experiencia',
+        tagFeatured: 'Destacada'
+      },
+      en: {
+        badge: 'Salento, Quindío · Gastronomy & Cultural Experiences',
+        heroTitle: 'Local & Cosmo Experiences',
+        heroSubtitle: 'Artisanal cuisine, specialty coffees, botanical wellness, and exclusive tours in Salento.',
+        viewMenu: 'View Menu & Experiences',
+        howToGet: 'Open in Google Maps',
+        reserve: 'Book a Table',
+        searchPlaceholder: 'Search food or experience...',
+        cannabisText: 'You can add Cannabis Drops to any beverage',
+        categories: {
+          all: 'All',
+          experiencias: 'Experiences',
+          entradas: 'Appetizers',
+          fuertes: 'Main Courses',
+          calientes: 'Hot Drinks',
+          frias: 'Cold Drinks'
+        },
+        faqTitle: 'Information for Travelers & Hotels',
+        faqs: [
+          { q: 'How do I book a Meraki Experience?', a: 'You can book directly in advance via WhatsApp to secure spots and schedules.' },
+          { q: 'Can hotels offer these experiences to their guests?', a: 'Yes, we collaborate with local hotels and accommodations looking to provide signature experiences.' },
+          { q: 'What payment methods do you accept?', a: 'We accept international credit cards (Visa, Mastercard, Amex), digital transfers, and cash COP.' },
+          { q: 'Are there vegetarian options available?', a: 'Yes, we offer plant-based alternatives across both the regular menu and culinary experiences.' }
+        ],
+        galleryTag: 'Atmosphere & Heritage',
+        galleryTitle: 'The Meraki Space',
+        gallerySub: 'A haven of signature cuisine and botanical wellness in the heart of Salento.',
+        galleryC1Title: 'Meraki Facade & Terrace',
+        galleryC1Desc: 'A warm and welcoming venue with handcrafted character in Salento.',
+        galleryC2Title: 'Evening Atmosphere',
+        galleryC2Desc: 'Intimate lighting and cozy spaces crafted for special moments.',
+        locTag: 'Find Us',
+        locMainTitle: 'Location & Hours',
+        locMainSub: 'Visit us in Salento, Quindío. We welcome travelers, locals, and partner accommodations.',
+        locCardTitle1: 'Our Location',
+        locCardSub1: 'Salento, Quindío, Colombia',
+        locCardTitle2: 'Opening Hours',
+        locCardDays: 'Monday to Sunday',
+        locCardHours: '2:00 PM – 10:00 PM',
+        locCardTitle3: 'Direct Contact',
+        locMapBtn: 'Get Directions on Google Maps →',
+        whatsappMsg: 'Olá Angélica, quero meu diagnóstico gratuito',
+        bookExp: 'Book Experience',
+        orderBtn: 'Order →',
+        tagExp: 'Experience',
+        tagFeatured: 'Featured'
+      },
+      pt: {
+        badge: 'Salento, Quindío · Experiência Gastronômica & Cultural',
+        heroTitle: 'Local & Cosmo Experiences',
+        heroSubtitle: 'Cozinha autoral, cafés especiais, bem-estar botânico e vivências exclusivas em Salento.',
+        viewMenu: 'Ver Cardápio & Experiências',
+        howToGet: 'Abrir no Google Maps',
+        reserve: 'Reservar Mesa',
+        searchPlaceholder: 'Buscar prato ou experiência...',
+        cannabisText: 'Você pode adicionar Gotas de Cannabis a qualquer bebida',
+        categories: {
+          all: 'Tudo',
+          experiencias: 'Experiências',
+          entradas: 'Entradas',
+          fuertes: 'Pratos Principais',
+          calientes: 'Bebidas Quentes',
+          frias: 'Bebidas Geladas'
+        },
+        faqTitle: 'Informações para Viajantes e Hotéis',
+        faqs: [
+          { q: 'Como agendar uma das Experiências Meraki?', a: 'Você pode agendar diretamente pelo WhatsApp com antecedência para garantir vagas e horários.' },
+          { q: 'Hotéis e pousadas podem oferecer estas experiências aos hóspedes?', a: 'Sim, realizamos parcerias com hospedagens locais para proporcionar experiências gastronômicas e botânicas exclusivas.' },
+          { q: 'Quais formas de pagamento são aceitas?', a: 'Aceitamos cartões internacionais, pagamentos por aproximação e dinheiro em espécie (COP).' },
+          { q: 'Existem opções vegetarianas?', a: 'Sim, dispomos de alternativas adaptadas tanto no menu quanto na experiência gastronômica.' }
+        ],
+        galleryTag: 'Atmosfera & Tradição',
+        galleryTitle: 'O Espaço Meraki',
+        gallerySub: 'Um refúgio de gastronomia autoral e bem-estar no coração de Salento.',
+        galleryC1Title: 'Fachada e Varanda Meraki',
+        galleryC1Desc: 'Um espaço acolhedor com calor artesanal em Salento.',
+        galleryC2Title: 'Atmosfera Noturna',
+        galleryC2Desc: 'Iluminação intimista e detalhes pensados para momentos memoráveis.',
+        locTag: 'Onde Estamos',
+        locMainTitle: 'Localização e Horários',
+        locMainSub: 'Visite-nos em Salento, Quindío. Atendemos turistas, locais e hóspedes de hotéis parceiros.',
+        locCardTitle1: 'Nosso Endereço',
+        locCardSub1: 'Salento, Quindío, Colômbia',
+        locCardTitle2: 'Horários de Atendimento',
+        locCardDays: 'Segunda a Domingo',
+        locCardHours: '14:00 – 22:00',
+        locCardTitle3: 'Contato Direto',
+        locMapBtn: 'Como Chegar no Google Maps →',
+        whatsappMsg: 'Olá Angélica, quero meu diagnóstico gratuito',
+        bookExp: 'Reservar Experiência',
+        orderBtn: 'Pedir →',
+        tagExp: 'Experiência',
+        tagFeatured: 'Destaque'
+      }
+    };
+
+    const MENU_ITEMS = [
+      {
+        id: 'exp1',
+        cat: 'experiencias',
+        price: 0,
+        isExp: true,
+        pop: true,
+        img: 'Sabores de Salento (por Meraki).png',
+        meta: {
+          es: '60–75 min · En Meraki · ES / EN',
+          en: '60–75 min · At Meraki · ES / EN',
+          pt: '60–75 min · No Meraki · ES / EN'
+        },
+        name: { 
+          es: 'Sabores de Salento (por Meraki)', 
+          en: 'Flavors of Salento (by Meraki)', 
+          pt: 'Sabores de Salento (por Meraki)' 
+        },
+        waMsg: {
+          es: 'Olá Angélica, quero meu diagnóstico gratuito',
+          en: 'Olá Angélica, quero meu diagnóstico gratuito',
+          pt: 'Olá Angélica, quero meu diagnóstico gratuito'
+        },
+        intro: {
+          es: 'Un viaje a fuego lento por los sabores de Salento y la cocina de autor:',
+          en: 'A slow-cooked journey connecting local roots with signature gastronomy:',
+          pt: 'Uma viagem em fogo lento conectando raízes locais e culinária autoral:'
+        },
+        steps: {
+          es: [
+            { t: 'Bienvenida', d: 'Introducción a la filosofía culinaria de Meraki' },
+            { t: 'Degustación', d: 'Apertura con bocados de origen local' },
+            { t: 'Plato Principal', d: 'Receta de cocción lenta artesanal a tu elección' },
+            { t: 'Cierre de Origen', d: 'Bebida de la casa y café colombiano de especialidad' }
+          ],
+          en: [
+            { t: 'Welcome', d: 'Introduction to Meraki’s culinary philosophy' },
+            { t: 'Tasting', d: 'Curated local appetizers' },
+            { t: 'Main Course', d: 'Slow-cooked artisan dish of your choice' },
+            { t: 'Origin Finish', d: 'House beverage & single-origin Colombian coffee' }
+          ],
+          pt: [
+            { t: 'Boas-vindas', d: 'Introdução à filosofia de cozinha do Meraki' },
+            { t: 'Degustação', d: 'Abertura com sabores típicos da região' },
+            { t: 'Prato Principal', d: 'Receita artesanal em fogo lento à sua escolha' },
+            { t: 'Encerramento', d: 'Bebida da casa e café colombiano especial' }
+          ]
+        },
+        footerQuote: {
+          es: '“El amor se cocina a fuego lento.”',
+          en: '“Love is slow-cooked.”',
+          pt: '“O amor se cozinha em fogo lento.”'
+        }
+      },
+      {
+        id: 'exp2',
+        cat: 'experiencias',
+        price: 0,
+        isExp: true,
+        pop: true,
+        img: 'La Voz de las Plantas (Grow Ganja).png',
+        meta: {
+          es: '90–120 min · Jardín & Laboratorio',
+          en: '90–120 min · Garden & Lab',
+          pt: '90–120 min · Jardim & Laboratório'
+        },
+        name: { 
+          es: 'La Voz de las Plantas (Grow Ganja)', 
+          en: 'The Voice of Plants (Grow Ganja)', 
+          pt: 'A Voz das Plantas (Grow Ganja)' 
+        },
+        waMsg: {
+          es: 'Olá Angélica, quero meu diagnóstico gratuito',
+          en: 'Olá Angélica, quero meu diagnóstico gratuito',
+          pt: 'Olá Angélica, quero meu diagnóstico gratuito'
+        },
+        intro: {
+          es: 'Recorrido botánico y sensorial para reconectar con el bienestar vegetal:',
+          en: 'A sensory and botanical exploration to reconnect with plant wellness:',
+          pt: 'Uma exploração botânica e sensorial para se reconectar com as plantas:'
+        },
+        steps: {
+          es: [
+            { t: 'El Jardín (Conocer)', d: 'Reconocimiento táctil y aromático de plantas medicinales' },
+            { t: 'Los Sentidos (Sentir)', d: 'Exploración aromática de aceites, resinas y texturas' },
+            { t: 'El Laboratorio (Transformar)', d: 'Procesos de maceración, extracción y formulación' },
+            { t: 'Crea & Lleva (Recordar)', d: 'Elabora tu propio producto botánico guiado como recuerdo' }
+          ],
+          en: [
+            { t: 'The Garden (Learn)', d: 'Identify and touch aromatic and medicinal herbs' },
+            { t: 'The Senses (Feel)', d: 'Aromatherapy exploration of textures and oils' },
+            { t: 'The Lab (Transform)', d: 'Extraction methods and modern botanical formulation' },
+            { t: 'Craft & Keep (Create)', d: 'Handcraft your own botanical souvenir to take home' }
+          ],
+          pt: [
+            { t: 'O Jardim (Conhecer)', d: 'Identificação e toque em plantas medicinais e aromáticas' },
+            { t: 'Os Sentidos (Sentir)', d: 'Exploração sensorial de texturas e óleos essenciais' },
+            { t: 'O Laboratório (Transformar)', d: 'Processos de maceração, extração e formulação' },
+            { t: 'Crie & Leve (Lembrar)', d: 'Prepare seu próprio produto botânico para levar para casa' }
+          ]
+        },
+        footerQuote: {
+          es: '“Las plantas siempre han hablado. Nosotros aprendimos a escucharlas.”',
+          en: '“Plants have always spoken. We just learned to listen.”',
+          pt: '“As plantas sempre falaram. Nós aprendemos a escutá-las.”'
+        }
+      },
+      {
+        id: 'exp3',
+        cat: 'experiencias',
+        price: 0,
+        isExp: true,
+        pop: true,
+        img: 'Salento Real Historias Detrás de sus Calles.png',
+        meta: {
+          es: '2h 30 min · 3:00 PM · Máx. 6 personas',
+          en: '2h 30 min · 3:00 PM · Max 6 guests',
+          pt: '2h 30 min · 15:00 · Máx. 6 pessoas'
+        },
+        name: { 
+          es: 'Salento Real: Historias Detrás de sus Calles', 
+          en: 'Salento Real: Stories Behind the Streets', 
+          pt: 'Salento Real: Histórias por Trás das Ruas' 
+        },
+        waMsg: {
+          es: 'Olá Angélica, quero meu diagnóstico gratuito',
+          en: 'Olá Angélica, quero meu diagnóstico gratuito',
+          pt: 'Olá Angélica, quero meu diagnóstico gratuito'
+        },
+        intro: {
+          es: 'No vengas solo a ver Salento, ven a entenderlo. Caminata cultural en 5 momentos:',
+          en: 'Don’t just visit Salento, understand its roots. Walking tour in 5 parts:',
+          pt: 'Não venha apenas visitar Salento, venha entendê-lo. Caminhada em 5 atos:'
+        },
+        steps: {
+          es: [
+            { t: 'Origen', d: 'Punto de partida en Meraki y contexto del territorio' },
+            { t: 'Memoria Local', d: 'Historias reales y patrimonio que no están en Google' },
+            { t: 'Calle Real', d: 'Encuentros cercanos con artesanos y emprendedores locales' },
+            { t: 'El Mirador', d: 'Comprensión del paisaje, cordillera y desarrollo turístico' },
+            { t: 'Sabores & Memoria', d: 'Cata de chocolatería, memoria fotográfica y regreso a Meraki' }
+          ],
+          en: [
+            { t: 'Origins', d: 'Departure from Meraki and regional history overview' },
+            { t: 'Untold Heritage', d: 'Authentic local stories absent from conventional guides' },
+            { t: 'Calle Real', d: 'Interactions with authentic local artisans and craftspeople' },
+            { t: 'The Viewpoint', d: 'Reading the mountain landscape and Valley context' },
+            { t: 'Flavors & Memory', d: 'Artisan chocolate stop, photographic history, and wrap-up' }
+          ],
+          pt: [
+            { t: 'Origens', d: 'Ponto de partida no Meraki e introdução à história' },
+            { t: 'Memória Oral', d: 'Histórias e personagens que não aparecem na internet' },
+            { t: 'Calle Real', d: 'Conversas com artesãos e pioneiros da vila' },
+            { t: 'Mirante', d: 'Visão panorâmica da cordilheira e leitura geográfica' },
+            { t: 'Sabores & Registro', d: 'Degustação artesanal, fotos históricas e retorno ao Meraki' }
+          ]
+        },
+        footerQuote: {
+          es: '“Personas → Historias → Territorio → Sabores”',
+          en: '“People → Stories → Territory → Flavors”',
+          pt: '“Pessoas → Histórias → Território → Sabores”'
+        }
+      },
+      {
+        id: 'exp4',
+        cat: 'experiencias',
+        price: 0,
+        isExp: true,
+        pop: false,
+        img: 'Grow Ganja De la Semilla a la Transformacion.png',
+        meta: {
+          es: '~2 horas · Educación Cannábica · Laboratorio',
+          en: '~2 hours · Cannabis Education · Lab',
+          pt: '~2 horas · Educação Canábica · Laboratório'
+        },
+        name: { 
+          es: 'Grow Ganja: De la Semilla a la Transformación', 
+          en: 'Grow Ganja: From Seed to Transformation', 
+          pt: 'Grow Ganja: Da Semente à Transformação' 
+        },
+        waMsg: {
+          es: 'Olá Angélica, quero meu diagnóstico gratuito',
+          en: 'Olá Angélica, quero meu diagnóstico gratuito',
+          pt: 'Olá Angélica, quero meu diagnóstico gratuito'
+        },
+        intro: {
+          es: 'Experiencia turística pionera en educación cannábica sin mitos ni estigmas:',
+          en: 'Pioneering educational cannabis masterclass breaking myths and taboos:',
+          pt: 'Experiência pioneira em educação canábica descomplicada e sem estigmas:'
+        },
+        steps: {
+          es: [
+            { t: 'Genética & Semillas', d: 'Selección de cepas, germinación y primeros cuidados' },
+            { t: 'Cultivo Vivo', d: 'Fases vegetativas, floración, sustratos y nutrición orgánica' },
+            { t: 'Anatomía & Aromas', d: 'Comprensión de terpenos, cannabinoides y perfiles aromáticos' },
+            { t: 'Cosecha & Laboratorio', d: 'Procesos de secado, curado y formulación de derivados botánicos' }
+          ],
+          en: [
+            { t: 'Genetics & Seeds', d: 'Strain selection, seed viability, and germination science' },
+            { t: 'Living Crop', d: 'Vegetative growth, organic substrates, and flowering care' },
+            { t: 'Terpenes & Anatomy', d: 'Unpacking cannabinoids, aromas, and sensory profiles' },
+            { t: 'Harvest & Lab', d: 'Curing techniques, drying standards, and botanical formulations' }
+          ],
+          pt: [
+            { t: 'Genética & Sementes', d: 'Seleção de sementes, germinação e manejo inicial' },
+            { t: 'Cultivo Orgânico', d: 'Fases de crescimento, floração e nutrição da planta' },
+            { t: 'Aromas & Terpenos', d: 'Entendimento dos canabinoides e perfis aromáticos' },
+            { t: 'Colheita & Laboratório', d: 'Secagem, cura e formulação botânica contemporânea' }
+          ]
+        },
+        footerQuote: {
+          es: '“De la semilla a la planta, y de la planta a su transformación.”',
+          en: '“From seed to plant, and from plant to transformation.”',
+          pt: '“Da semente à planta, e da planta à sua transformação.”'
+        }
+      },
+      { 
+        id: 'e1', 
+        cat: 'entradas', 
+        price: 20000, 
+        pop: true, 
+        img: 'nachossencillos.png',
+        name: { es: 'Nachos Sencillos', en: 'Classic Nachos', pt: 'Nachos Clássicos' }, 
+        desc: { 
+          es: 'Totopos de maíz recién horneados, acompañados de guacamole artesanal y un toque cítrico que despertará el paladar.', 
+          en: 'Freshly baked corn tortilla chips served with artisanal guacamole and a citrus note to awaken your palate.', 
+          pt: 'Tortilhas de milho assadas na hora, acompanhadas de guacamole artesanal e um toque cítrico.' 
+        } 
+      },
+      { 
+        id: 'e2', 
+        cat: 'entradas', 
+        price: 35000, 
+        pop: true, 
+        img: 'nachosconbirria.png',
+        name: { es: 'Nachos con Birria', en: 'Birria Nachos', pt: 'Nachos com Birria' }, 
+        desc: { 
+          es: 'Crujientes totopos de maíz cubiertos con queso fundido y nuestra birria cocinada lentamente durante horas. Coronados con guacamole fresco, pico de gallo y cebolla encurtida.', 
+          en: 'Crispy corn tortilla chips topped with melted cheese, slow-braised beef birria, fresh guacamole, pico de gallo, and pickled onions.', 
+          pt: 'Tortilhas crocantes cobertas com queijo derretido, birria cozida lentamente, guacamole fresco, pico de gallo e cebola em conserva.' 
+        } 
+      },
+      { 
+        id: 'e3', 
+        cat: 'entradas', 
+        price: 40000, 
+        pop: false, 
+        img: 'Ceviche.png',
+        name: { es: 'Ceviche', en: 'House Ceviche', pt: 'Ceviche da Casa' }, 
+        desc: { 
+          es: 'Porción de cerdo crujiente marinado en limón fresco, mezclado con tomate, cebolla morada, cilantro y un toque de ají sobre guacamole con tostones.', 
+          en: 'Crispy pork belly marinated in fresh lime juice with tomato, red onion, cilantro, and mild chili over artisanal guacamole with fried plantains.', 
+          pt: 'Porção de torresmo crocante marinado em limão fresco com tomate, cebola roxa, coentro e pimenta sobre guacamole e patacões.' 
+        } 
+      },
+      { 
+        id: 'e4', 
+        cat: 'entradas', 
+        price: 35000, 
+        pop: true, 
+        img: 'Papas con Birria.png',
+        name: { es: 'Papas con Birria', en: 'Birria Fries', pt: 'Batatas com Birria' }, 
+        desc: { 
+          es: 'Papas crocantes cubiertas con queso fundido y birria de res cocinada lentamente en sus propios jugos con guacamole y pico de gallo.', 
+          en: 'Crispy fries covered with melted cheese and slow-cooked beef birria, topped with guacamole and pico de gallo.', 
+          pt: 'Batatas crocantes cobertas com queijo derretido e birria de carne bovina, finalizadas com guacamole e pico de gallo.' 
+        } 
+      },
+      { 
+        id: 'e5', 
+        cat: 'entradas', 
+        price: 28000, 
+        pop: false, 
+        img: 'Papas con Parmesano.png',
+        name: { es: 'Papas con Parmesano', en: 'Parmesan Herb Fries', pt: 'Batatas com Parmesão' }, 
+        desc: { 
+          es: 'Papas doradas y crujientes bañadas en mantequilla aromatizada con ajo y perejil, terminadas con queso parmesano y finas hierbas.', 
+          en: 'Golden crispy fries tossed in garlic-parsley butter, finished with aged parmesan cheese and fine herbs.', 
+          pt: 'Batatas douradas e crocantes envoltas em manteiga de alho e salsa, finalizadas com queijo parmesão e ervas finas.' 
+        } 
+      },
+      { 
+        id: 'e6', 
+        cat: 'entradas', 
+        price: 25000, 
+        pop: false, 
+        img: 'Patacones de la Casa.png',
+        name: { es: 'Patacones de la Casa', en: 'House Fried Plantains', pt: 'Patacões da Casa' }, 
+        desc: { 
+          es: 'Tostones de plátano crocante típicos de Salento acompañados de guacamole y salsa de la casa.', 
+          en: 'Crispy green plantain tostones typical of Salento, served with house guacamole and signature dipping sauce.', 
+          pt: 'Patacões de banana-da-terra crocantes típicos de Salento servidos com guacamole e molho da casa.' 
+        } 
+      },
+      {
+        id: 'f1',
+        cat: 'fuertes',
+        price: 15000,
+        pop: false,
+        img: 'Crema de Verduras.png',
+        name: { es: 'Crema de Verduras', en: 'Vegetable Cream Soup', pt: 'Creme de Legumes' },
+        desc: {
+          es: 'Reconfortante crema elaborada con vegetales de temporada, crema de leche, queso parmesano y crotones artesanales.',
+          en: 'Comforting seasonal vegetable cream soup topped with cream, parmesan cheese, and artisan croutons.',
+          pt: 'Creme reconfortante de legumes da estação com creme de leite, parmesão e croutons artesanais.'
+        }
+      },
+      {
+        id: 'f2',
+        cat: 'fuertes',
+        price: 18000,
+        pop: false,
+        img: 'Crema de Trucha.png',
+        name: { es: 'Crema de Trucha', en: 'Smoked Trout Cream Soup', pt: 'Creme de Truta Defumada' },
+        desc: {
+          es: 'Delicada crema elaborada con trucha ahumada, crema de leche, queso parmesano y crotones artesanales.',
+          en: 'Delicate smoked trout soup finished with cream, grated parmesan, and artisan croutons.',
+          pt: 'Creme delicado de truta defumada finalizado com creme de leite, queijo parmesão e croutons.'
+        }
+      },
+      {
+        id: 'f3',
+        cat: 'fuertes',
+        price: 35000,
+        pop: false,
+        img: 'Pechuga Asada.png',
+        name: { es: 'Pechuga Asada', en: 'Grilled Chicken Breast', pt: 'Peito de Frango Grelhado' },
+        desc: {
+          es: 'Pechuga de pollo a la plancha dorada por fuera y jugosa por dentro sobre salsa de queso, mix de lechugas y papa criolla.',
+          en: 'Seared chicken breast served over creamy cheese sauce, fresh greens, and baby yellow potatoes.',
+          pt: 'Peito de frango grelhado dourado sobre molho de queijo, mix de folhas e batata crioula.'
+        }
+      },
+      {
+        id: 'f4',
+        cat: 'fuertes',
+        price: 40000,
+        pop: false,
+        img: 'Pollo Criollo.png',
+        name: { es: 'Pollo Criollo', en: 'Traditional Creole Chicken', pt: 'Frango Criollo Tradicional' },
+        desc: {
+          es: 'Pollo cocinado en salsa criolla de tomate, cebolla y cilantro, servido sobre una cama de arroz blanco y maíz.',
+          en: 'Chicken braised in Colombian creole sauce (tomato, onion, cilantro) over white rice and sweet corn.',
+          pt: 'Frango cozido em molho criollo tradicional de tomate, cebola e coentro sobre arroz branco e milho.'
+        }
+      },
+      {
+        id: 'f5',
+        cat: 'fuertes',
+        price: 50000,
+        pop: true,
+        img: 'Pechuga Gratinada.png',
+        name: { es: 'Pechuga Gratinada', en: 'Au Gratin Chicken Breast', pt: 'Peito de Frango Gratinado' },
+        desc: {
+          es: 'Filete de pollo gratinado con queso mozzarella y parmesano; acompañado de ensalada de la casa y papas criollas.',
+          en: 'Chicken breast gratin with melted mozzarella and parmesan cheese, salad, and baby yellow potatoes.',
+          pt: 'Filé de frango gratinado com queijo muçarela e parmesão, salada e batatas crioulas.'
+        }
+      },
+      {
+        id: 'f6',
+        cat: 'fuertes',
+        price: 55000,
+        pop: true,
+        img: 'Trucha Asada.png',
+        name: { es: 'Trucha Asada', en: 'Wood-Smoked River Trout', pt: 'Truta Defumada na Brasa' },
+        desc: {
+          es: 'Trucha fresca ahumada durante 5 horas en madera de naranjo sobre crema de queso y ajo, patacón y ensalada.',
+          en: 'Fresh local trout smoked for 5 hours in orange wood over garlic cream cheese, plantain toston, and salad.',
+          pt: 'Truta fresca defumada por 5 horas em lenha de laranjeira sobre creme de alho, patacão e salada.'
+        }
+      },
+      {
+        id: 'f7',
+        cat: 'fuertes',
+        price: 55000,
+        pop: true,
+        img: 'Costillas al Horno.png',
+        name: { es: 'Costillas al Horno', en: 'Slow-Baked BBQ Ribs', pt: 'Costelinha BBQ ao Forno' },
+        desc: {
+          es: 'Costillas de cerdo cocinadas lentamente durante 8 horas, bañadas en salsa BBQ de la casa y servidas sobre papas cremosas.',
+          en: '8-hour slow-cooked tender pork ribs glazed in house BBQ sauce and served over creamy mashed potatoes.',
+          pt: 'Costelinha de porco assada lentamente por 8 horas, molho barbecue da casa e batatas cremosas.'
+        }
+      },
+      {
+        id: 'f8',
+        cat: 'fuertes',
+        price: 55000,
+        pop: false,
+        img: 'Estofado de Cerdo.png',
+        name: { es: 'Estofado de Cerdo', en: 'Red Wine Pork Stew', pt: 'Ensopado de Porco ao Vinho' },
+        desc: {
+          es: 'Cerdo cocinado lentamente durante 8 horas con verduras en reducción de vino tinto con arroz blanco y papa criolla.',
+          en: '8-hour braised pork stew with vegetables in red wine reduction, served with white rice and baby yellow potatoes.',
+          pt: 'Carne de porco cozida lentamente por 8 horas com legumes em redução de vinho tinto, arroz e batata crioula.'
+        }
+      },
+      {
+        id: 'f9',
+        cat: 'fuertes',
+        price: 50000,
+        pop: true,
+        img: 'Salteado de Res.png',
+        name: { es: 'Salteado de Res', en: 'Wok Beef Stir-Fry', pt: 'Salteado de Carne ao Wok' },
+        desc: {
+          es: 'Res salteada al wok con tomate, cebolla, cilantro, papas fritas, salsa soya y reducción de vino tinto sobre arroz.',
+          en: 'Wok-seared beef with tomatoes, onions, cilantro, fries, soy sauce, and red wine reduction over rice.',
+          pt: 'Tiras de carne salteadas na wok com legumes, batata frita, shoyu e vinho tinto sobre arroz branco.'
+        }
+      },
+      {
+        id: 'f10',
+        cat: 'fuertes',
+        price: 50000,
+        pop: false,
+        img: 'Patacón de Birria.png',
+        name: { es: 'Patacón de Birria', en: 'Birria Plantain Toston', pt: 'Patacão com Birria' },
+        desc: {
+          es: 'Patacón crujiente servido con birria de res cocinada lentamente, queso mozzarella, cheddar, guacamole y pico de gallo.',
+          en: 'Crispy green plantain topped with slow-braised beef birria, melted cheeses, guacamole, and pico de gallo.',
+          pt: 'Patacão crocante coberto com birria bovina, queijos derretidos, guacamole e pico de gallo.'
+        }
+      },
+      {
+        id: 'f11',
+        cat: 'fuertes',
+        price: 50000,
+        pop: false,
+        img: 'Fajitas Mixtas.png',
+        name: { es: 'Fajitas Mixtas', en: 'Mixed Sizzling Fajitas', pt: 'Fajitas Mistas' },
+        desc: {
+          es: 'Res y pollo salteados con cebolla y pimentón, servidos con tortillas de trigo calientes, guacamole y pico de gallo.',
+          en: 'Sautéed beef and chicken with peppers and onions, warm wheat tortillas, fresh guacamole, and pico de gallo.',
+          pt: 'Carne e frango salteados com vegetais, servidos com tortilhas de trigo quentes, guacamole e pico de gallo.'
+        }
+      },
+      {
+        id: 'f12',
+        cat: 'fuertes',
+        price: 50000,
+        pop: false,
+        img: 'Tacos x 5.png',
+        name: { es: 'Tacos x 5', en: 'Street Tacos Tasting (5 pcs)', pt: 'Combo 5 Tacos Variados' },
+        desc: {
+          es: 'Cinco tacos tradicionales: Asada de res, cochinita pibil, chicharrón, tinga de pollo y pastor con ingredientes frescos.',
+          en: 'Five authentic street tacos: grilled beef, cochinita pibil, crispy pork, chicken tinga, and al pastor.',
+          pt: 'Cinco tacos mexicanos autênticos: carne assada, cochinita, torresmo, frango tinga e pastor.'
+        }
+      },
+      {
+        id: 'f13',
+        cat: 'fuertes',
+        price: 55000,
+        pop: true,
+        img: 'Tacos de Birria.png',
+        name: { es: 'Tacos de Birria', en: 'Cheesy Birria Tacos (4 pcs)', pt: 'Tacos de Birria com Consomé' },
+        desc: {
+          es: '4 Tortillas de maíz con queso fundido y birria de res, servidas con cebolla, cilantro y consomé caliente.',
+          en: '4 corn tortillas with melted cheese and juicy beef birria, served with onions, cilantro, and warm dipping broth.',
+          pt: '4 tortilhas de milho com queijo derretido e birria bovina, servidas com cebola, coentro e caldo quente.'
+        }
+      },
+      {
+        id: 'f14',
+        cat: 'fuertes',
+        price: 40000,
+        pop: false,
+        img: 'Quesadilla.png',
+        name: { es: 'Quesadilla', en: 'Signature Stuffed Quesadilla', pt: 'Quesadilla Especial' },
+        desc: {
+          es: 'Tortilla de trigo dorada rellena de quesos fundidos, pollo desmechado y frijol en salsa birria con guacamole.',
+          en: 'Golden flour tortilla filled with melted cheese, shredded chicken, and black beans in birria sauce with guacamole.',
+          pt: 'Tortilha de trigo tostada recheada com queijo derretido, frango desfiado e feijão ao molho de birria.'
+        }
+      },
+      {
+        id: 'bc1',
+        cat: 'calientes',
+        price: 5000,
+        pop: true,
+        img: 'Tinto Colombiano.png',
+        name: { es: 'Tinto Colombiano', en: 'Colombian Drip Coffee', pt: 'Tinto Colombiano' },
+        desc: {
+          es: 'Café negro caliente filtrado con granos de café colombiano seleccionado.',
+          en: 'Hot black coffee brewed with selected Colombian coffee beans using traditional drip filter method.',
+          pt: 'Café preto quente preparado com o método coado tradicional usando grãos colombianos.'
+        }
+      },
+      {
+        id: 'bc2',
+        cat: 'calientes',
+        price: 6000,
+        pop: false,
+        img: 'Americano.png',
+        name: { es: 'Americano', en: 'Caffè Americano', pt: 'Café Americano' },
+        desc: {
+          es: 'Bebida caliente hecha a base de espresso suavizado con agua caliente.',
+          en: 'Hot classic beverage made with rich espresso diluted with hot water.',
+          pt: 'Bebida quente clássica feita com dose de espresso suavizada com água quente.'
+        }
+      },
+      {
+        id: 'bc3',
+        cat: 'calientes',
+        price: 7000,
+        pop: true,
+        img: 'Espresso.png',
+        name: { es: 'Espresso', en: 'Single Espresso', pt: 'Café Espresso' },
+        desc: {
+          es: 'Extracción corta de café colombiano finamente molido a alta presión.',
+          en: 'Short extraction of finely ground single origin Colombian coffee brewed under high pressure.',
+          pt: 'Extração curta de café colombiano finamente moído preparado sob alta pressão.'
+        }
+      },
+      {
+        id: 'bc4',
+        cat: 'calientes',
+        price: 8000,
+        pop: false,
+        img: 'Macchiato.png',
+        name: { es: 'Macchiato', en: 'Caffè Macchiato', pt: 'Café Macchiato' },
+        desc: {
+          es: 'Espresso marcado con una pequeña cantidad de leche vaporizada.',
+          en: 'Bold espresso stained with a silky touch of steamed milk microfoam.',
+          pt: 'Espresso intenso marcado com uma pequena porção de leite vaporizado.'
+        }
+      },
+      {
+        id: 'bc5',
+        cat: 'calientes',
+        price: 9000,
+        pop: true,
+        img: 'Capuchino.png',
+        name: { es: 'Capuchino', en: 'Artisan Cappuccino', pt: 'Cappuccino Cremoso' },
+        desc: {
+          es: 'Espresso con leche vaporizada, finalizado con espuma de leche cremosa.',
+          en: 'Balanced espresso with hot textured milk topped with velvety thick milk foam.',
+          pt: 'Bebida à base de espresso com leite vaporizado e finalizada com espuma cremosa.'
+        }
+      },
+      {
+        id: 'bc6',
+        cat: 'calientes',
+        price: 9000,
+        pop: false,
+        img: 'Café con Leche.png',
+        name: { es: 'Café con Leche', en: 'Café Latte', pt: 'Café com Leite' },
+        desc: {
+          es: 'Espresso coronado con una suave porción de leche vaporizada.',
+          en: 'Smooth espresso crowned with a generous portion of steamed milk.',
+          pt: 'Espresso finalizado com uma porção equilibrada de leite vaporizado.'
+        }
+      },
+      {
+        id: 'bc7',
+        cat: 'calientes',
+        price: 9000,
+        pop: false,
+        img: 'Mokaccino.png',
+        name: { es: 'Mokaccino', en: 'Caffè Mocha', pt: 'Mocaccino' },
+        desc: {
+          es: 'Bebida caliente hecha con espresso, cacao y leche vaporizada con espuma cremosa.',
+          en: 'Hot beverage made with espresso, cocoa, and steamed milk with foam.',
+          pt: 'Bebida quente feita com espresso, cacau e leite vaporizado com espuma cremosa.'
+        }
+      },
+      {
+        id: 'bc8',
+        cat: 'calientes',
+        price: 12000,
+        pop: false,
+        img: 'Green Chai.png',
+        name: { es: 'Green Chai', en: 'Spiced Green Chai', pt: 'Chá Verde Chai Especiado' },
+        desc: {
+          es: 'Infusión de leche con clavos, anís, jengibre, pimienta, cardamomo, spirulina y panela orgánica.',
+          en: 'Warm milk infusion with spices, ginger, cardamom, spirulina, and organic panela.',
+          pt: 'Bebida quente com especiarias orientais, spirulina e rapadura orgânica.'
+        }
+      },
+      {
+        id: 'bc9',
+        cat: 'calientes',
+        price: 9000,
+        pop: true,
+        img: 'Chocolate Caliente.png',
+        name: { es: 'Chocolate Caliente', en: 'Organic Hot Chocolate', pt: 'Chocolate Quente' },
+        desc: {
+          es: 'Bebida caliente a base de leche con cacao orgánico endulzado con panela.',
+          en: 'Traditional hot drink prepared with organic cocoa and milk sweetened with raw cane sugar.',
+          pt: 'Bebida quente com cacau orgânico adoçado com rapadura.'
+        }
+      },
+      {
+        id: 'bc10',
+        cat: 'calientes',
+        price: 6000,
+        pop: false,
+        img: 'Agua Panela.png',
+        name: { es: 'Agua Panela', en: 'Traditional Agua Panela', pt: 'Água de Panela Quente' },
+        desc: {
+          es: 'Bebida caliente tradicional elaborada con panela orgánica.',
+          en: 'Comforting traditional hot beverage made with organic raw cane sugar.',
+          pt: 'Bebida quente tradicional feita com rapadura orgânica.'
+        }
+      },
+      {
+        id: 'bf1',
+        cat: 'frias',
+        price: 12000,
+        pop: true,
+        img: 'Vaso de Jugo Natural.png',
+        name: { es: 'Vaso de Jugo Natural', en: 'Fresh Fruit Juice Glass', pt: 'Copo de Suco Natural' },
+        desc: {
+          es: 'Mango, maracuyá, lulo, fresa, mora, piña, guanábana, coco o uva.',
+          en: 'Choice of fresh tropical fruits: Mango, passion fruit, lulo, strawberry, blackberry, etc.',
+          pt: 'Sabores tropicais frescos à escolha: Manga, maracujá, lulo, morango, amora, abacaxi, etc.'
+        }
+      },
+      {
+        id: 'bf2',
+        cat: 'frias',
+        price: 30000,
+        pop: true,
+        img: 'Margarita Tamarindo.png',
+        name: { es: 'Margarita Tamarindo', en: 'Tamarind Margarita Cocktail', pt: 'Margarita de Tamarindo' },
+        desc: {
+          es: 'Cóctel frapeado con hielo, tequila y almíbar artesanal de tamarindo.',
+          en: 'Frozen alcoholic cocktail blended with ice, tequila, and house tamarind syrup.',
+          pt: 'Bebida alcoólica frappé com tequila e xarope artesanal de tamarindo da casa.'
+        }
+      },
+      {
+        id: 'bf3',
+        cat: 'frias',
+        price: 30000,
+        pop: false,
+        img: 'Margarita Jamaica.png',
+        name: { es: 'Margarita Jamaica', en: 'Hibiscus Margarita Cocktail', pt: 'Margarita de Hibisco' },
+        desc: {
+          es: 'Cóctel frapeado con hielo, tequila y flor de jamaica hecha en casa.',
+          en: 'Frozen alcoholic cocktail with tequila and house-crafted hibiscus flower syrup.',
+          pt: 'Coquetel frappé com tequila e infusão artesanal de flor de hibisco.'
+        }
+      },
+      {
+        id: 'bf4',
+        cat: 'frias',
+        price: 16000,
+        pop: true,
+        img: 'Jardín Tropical (Mocktail).png',
+        name: { es: 'Jardín Tropical (Mocktail)', en: 'Tropical Garden Mocktail', pt: 'Jardim Tropical (Sem Álcool)' },
+        desc: {
+          es: 'Mango, piña, maracuyá, albahaca macerada, limón mandarina y soda.',
+          en: 'Refreshing mocktail with mango, pineapple, passion fruit, fresh basil, and soda.',
+          pt: 'Mocktail refrescante com frutas tropicais, manjericão e água com gás.'
+        }
+      },
+      {
+        id: 'bf5',
+        cat: 'frias',
+        price: 16000,
+        pop: false,
+        img: 'Rojo Andino (Mocktail).png',
+        name: { es: 'Rojo Andino (Mocktail)', en: 'Andean Red Berry Mocktail', pt: 'Vermelho Andino (Sem Álcool)' },
+        desc: {
+          es: 'Mora, fresa, uva, menta, jengibre, jarabe de jamaica y soda fría.',
+          en: 'Cold beverage made with berries, ginger mint, hibiscus syrup, and chilled soda.',
+          pt: 'Bebida refrescante de frutas vermelhas andinas, gengibre e hortelã.'
+        }
+      },
+      {
+        id: 'bf6',
+        cat: 'frias',
+        price: 16000,
+        pop: true,
+        img: 'Cafetal Cítrico.png',
+        name: { es: 'Cafetal Cítrico', en: 'Citrus Cold Brew Coffee Mocktail', pt: 'Cafetal Cítrico Gelado' },
+        desc: {
+          es: 'Café colombiano frío con jarabe de panela, limón mandarina, hielo y soda.',
+          en: 'Iced Colombian coffee mixed with raw cane panela syrup, lime, and sparkling soda.',
+          pt: 'Café colombiano gelado com xarope de rapadura, limão e água com gás.'
+        }
+      },
+      {
+        id: 'bf7',
+        cat: 'frias',
+        price: 15000,
+        pop: false,
+        img: 'Batido Amarillo.png',
+        name: { es: 'Batido Amarillo', en: 'Yellow Sunshine Smoothie', pt: 'Smoothie Amarelo Tropical' },
+        desc: {
+          es: 'Piña, mango, maracuyá, zucchini y aloe vera natural.',
+          en: 'Refreshing smoothie prepared with pineapple, sweet mango, passion fruit, zucchini, and aloe vera.',
+          pt: 'Smoothie natural de abacaxi, manga madura, maracujá e aloe vera.'
+        }
+      },
+      {
+        id: 'bf8',
+        cat: 'frias',
+        price: 15000,
+        pop: false,
+        img: 'Batido Verde.png',
+        name: { es: 'Green Detox Smoothie', en: 'Green Detox Smoothie', pt: 'Smoothie Verde Detox' },
+        desc: {
+          es: 'Pepino, espinaca, piña, apio, limón y miel pura servido con hielo.',
+          en: 'Detox smoothie with cucumber, spinach, pineapple, celery, lime, honey, and ice.',
+          pt: 'Smoothie verde detox com espinafre, abacaxi, aipo, pepino e mel puro.'
+        }
+      },
+      {
+        id: 'bf9',
+        cat: 'frias',
+        price: 20000,
+        pop: true,
+        img: 'Refajo Colombiano.png',
+        name: { es: 'Refajo Colombiano', en: 'Colombian Refajo Beer Cocktail', pt: 'Refajo Típico Colombiano' },
+        desc: {
+          es: 'Bebida tradicional con cerveza rubia y soda Kola colombiana.',
+          en: 'Traditional Colombian social beverage pairing blonde lager with Kola soda.',
+          pt: 'Bebida típica colombiana combinando cerveja clara e refrigerante regional.'
+        }
+      },
+      {
+        id: 'bf10',
+        cat: 'frias',
+        price: 30000,
+        pop: false,
+        img: 'Uva Colada Cocktail.png',
+        name: { es: 'Uva Colada Cocktail', en: 'Uva Colada Cream Cocktail', pt: 'Uva Colada Cocktail' },
+        desc: {
+          es: 'Cóctel cremoso con uva negra fresca, crema de coco y ron.',
+          en: 'Creamy cocktail made with fresh dark grapes, rich coconut cream, and rum.',
+          pt: 'Coquetel cremoso à base de uvas pretas, creme de coco e rum.'
+        }
+      },
+      {
+        id: 'bf11',
+        cat: 'frias',
+        price: 30000,
+        pop: true,
+        img: 'Mojito de Piña.png',
+        name: { es: 'Mojito de Piña', en: 'Pineapple Passion Mojito', pt: 'Mojito de Abacaxi Tropical' },
+        desc: {
+          es: 'Cóctel con piña, mango, maracuyá, hierbabuena y ron añejo.',
+          en: 'Tropical rum mojito shaken with fresh pineapple, passion fruit, and garden mint.',
+          pt: 'Mojito tropical com abacaxi, maracujá, hortelã e rum.'
+        }
+      },
+      {
+        id: 'bf12',
+        cat: 'frias',
+        price: 20000,
+        pop: false,
+        img: 'Copa de Vino.png',
+        name: { es: 'Copa de Vino', en: 'Glass of Wine', pt: 'Taça de Vinho' },
+        desc: {
+          es: 'Copa de vino tinto o blanco seleccionado de la casa.',
+          en: 'House selected glass of red or white wine.',
+          pt: 'Taça de vinho tinto ou branco selecionado da casa.'
+        }
+      },
+      {
+        id: 'bf13',
+        cat: 'frias',
+        price: 20000,
+        pop: true,
+        img: 'Cerveza Local Artesanal.png',
+        name: { es: 'Cerveza Local Artesanal', en: 'Local Craft Beer', pt: 'Cerveja Artesanal Local' },
+        desc: {
+          es: 'Cerveza artesanal elaborada en el Quindío.',
+          en: 'Locally crafted artisan beer from the Quindío region.',
+          pt: 'Cerveja artesanal especial produzida na região de Quindío.'
+        }
+      },
+      {
+        id: 'bf14',
+        cat: 'frias',
+        price: 10000,
+        pop: false,
+        img: 'Cerveza Nacional.png',
+        name: { es: 'Cerveza Nacional', en: 'National Beer', pt: 'Cerveja Nacional' },
+        desc: {
+          es: 'Cerveza nacional fría tradicional.',
+          en: 'Classic chilled Colombian domestic beer.',
+          pt: 'Cerveja nacional tradicional bem gelada.'
+        }
+      },
+      {
+        id: 'bf15',
+        cat: 'frias',
+        price: 12000,
+        pop: false,
+        img: 'Cerveza Corona.png',
+        name: { es: 'Cerveza Corona', en: 'Corona Extra Beer', pt: 'Cerveja Corona Extra' },
+        desc: {
+          es: 'Botella de cerveza Corona servida fría con rodaja de limón.',
+          en: 'Chilled Corona Extra bottle served with a fresh slice of lime.',
+          pt: 'Garrafa de cerveja Corona servida com rodela de limão.'
+        }
+      },
+      {
+        id: 'bf16',
+        cat: 'frias',
+        price: 7000,
+        pop: false,
+        img: 'Gaseosa Coca Cola servida con hielo y limon.png',
+        name: { es: 'Coca Cola', en: 'Coca Cola Classic', pt: 'Coca-Cola Tradicional' },
+        desc: {
+          es: 'Gaseosa Coca Cola servida con hielo y limón.',
+          en: 'Classic Coca Cola served with ice and lemon.',
+          pt: 'Refrigerante Coca-Cola servido com gelo e limão.'
+        }
+      },
+      {
+        id: 'bf17',
+        cat: 'frias',
+        price: 7000,
+        pop: false,
+        img: 'Coca Cola Zero.png',
+        name: { es: 'Coca Cola Zero', en: 'Coca Cola Zero Sugar', pt: 'Coca-Cola Zero Açúcar' },
+        desc: {
+          es: 'Gaseosa Coca Cola Zero azúcar servida fría con hielo.',
+          en: 'Chilled zero sugar Coca Cola served with ice.',
+          pt: 'Coca-Cola Zero açúcar servida bem gelada.'
+        }
+      },
+      {
+        id: 'bf18',
+        cat: 'frias',
+        price: 7000,
+        pop: false,
+        img: 'Bretaña.png',
+        name: { es: 'Bretaña', en: 'Bretaña Sparkling Club Soda', pt: 'Água com Gás Bretaña' },
+        desc: {
+          es: 'Agua carbonatada Bretaña servida fría.',
+          en: 'Traditional sparkling soda water served chilled with lemon.',
+          pt: 'Água carbonatada Bretaña servida gelada com limão.'
+        }
+      },
+      {
+        id: 'bf19',
+        cat: 'frias',
+        price: 12000,
+        pop: false,
+        img: 'Agua de Coco.png',
+        name: { es: 'Agua de Coco', en: 'Pure Coconut Water', pt: 'Água de Coco Natural' },
+        desc: {
+          es: 'Agua de coco natural refrescante.',
+          en: '100% natural refreshing coconut water.',
+          pt: 'Água de coco pura e natural bem refrescante.'
+        }
+      },
+      {
+        id: 'bf20',
+        cat: 'frias',
+        price: 5000,
+        pop: false,
+        img: 'Agua Sin Gas.png',
+        name: { es: 'Agua Sin Gas', en: 'Still Spring Water', pt: 'Água Mineral Sem Gás' },
+        desc: {
+          es: 'Botella de agua pura sin gas.',
+          en: 'Pure still bottled spring water.',
+          pt: 'Garrafa de água mineral pura sem gás.'
+        }
+      },
+      {
+        id: 'bf21',
+        cat: 'frias',
+        price: 5000,
+        pop: false,
+        img: 'Agua Con Gas.png',
+        name: { es: 'Agua Con Gas', en: 'Sparkling Spring Water', pt: 'Água Mineral Com Gás' },
+        desc: {
+          es: 'Botella de agua mineral con gas servida con limón.',
+          en: 'Sparkling mineral water served with fresh lime.',
+          pt: 'Água mineral com gás servida com rodela de limão.'
+        }
+      }
+    ];
+
+    function formatPrice(priceCop, lang) {
+      if (priceCop === 0) {
+        return lang === 'es' ? 'Bajo Reserva' : (lang === 'pt' ? 'Sob Reserva' : 'Upon Request');
+      }
+      const formattedCop = `$${priceCop.toLocaleString('es-CO')}`;
+      if (lang === 'en') {
+        const usdVal = priceCop / RATES.USD;
+        const usd = usdVal < 10 ? usdVal.toFixed(1) : Math.round(usdVal);
+        return `<span>${formattedCop}</span> <span class="text-[11px] font-normal text-[#6E5D57] ml-1">(~$${usd} USD)</span>`;
+      }
+      if (lang === 'pt') {
+        const brl = Math.round(priceCop / RATES.BRL);
+        return `<span>${formattedCop}</span> <span class="text-[11px] font-normal text-[#6E5D57] ml-1">(~R$ ${brl})</span>`;
+      }
+      return formattedCop;
+    }
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      
+      ['es', 'en', 'pt'].forEach(l => {
+        const btn = document.getElementById(`btn-${l}`);
+        if (l === lang) {
+          btn.className = 'px-2.5 py-1 rounded-full uppercase transition-all bg-[#A44A27] text-white shadow-sm';
+        } else {
+          btn.className = 'px-2.5 py-1 rounded-full uppercase transition-all text-[#6E5D57] hover:text-[#2B1E1A]';
+        }
+      });
+
+      const t = DICTIONARY[lang];
+
+      document.getElementById('hero-badge').textContent = t.badge;
+      document.getElementById('hero-title').textContent = t.heroTitle;
+      document.getElementById('hero-subtitle').textContent = t.heroSubtitle;
+      document.getElementById('btn-view-menu').textContent = t.viewMenu;
+      document.getElementById('btn-how-to-get').textContent = t.howToGet;
+      document.getElementById('nav-reserve-btn').textContent = t.reserve;
+      document.getElementById('search-input').placeholder = t.searchPlaceholder;
+      document.getElementById('cannabis-text').textContent = t.cannabisText;
+      document.getElementById('cannabis-price').innerHTML = `+${formatPrice(5000, lang)}`;
+      document.getElementById('faq-title').textContent = t.faqTitle;
+
+      document.getElementById('gallery-tag').textContent = t.galleryTag;
+      document.getElementById('gallery-title').textContent = t.galleryTitle;
+      document.getElementById('gallery-sub').textContent = t.gallerySub;
+      document.getElementById('gallery-c1-title').textContent = t.galleryC1Title;
+      document.getElementById('gallery-c1-desc').textContent = t.galleryC1Desc;
+      document.getElementById('gallery-c2-title').textContent = t.galleryC2Title;
+      document.getElementById('gallery-c2-desc').textContent = t.galleryC2Desc;
+
+      document.getElementById('loc-tag').textContent = t.locTag;
+      document.getElementById('loc-main-title').textContent = t.locMainTitle;
+      document.getElementById('loc-main-sub').textContent = t.locMainSub;
+      document.getElementById('loc-card-title1').textContent = t.locCardTitle1;
+      document.getElementById('loc-card-sub1').textContent = t.locCardSub1;
+      document.getElementById('loc-card-title2').textContent = t.locCardTitle2;
+      document.getElementById('loc-card-days').textContent = t.locCardDays;
+      document.getElementById('loc-card-hours').textContent = t.locCardHours;
+      document.getElementById('loc-card-title3').textContent = t.locCardTitle3;
+      document.getElementById('loc-map-btn').innerHTML = `<span>${t.locMapBtn}</span>`;
+
+      document.querySelectorAll('.cat-btn').forEach(btn => {
+        const catKey = btn.getAttribute('data-cat');
+        btn.textContent = t.categories[catKey];
+      });
+
+      const waUrl = `https://wa.me/5511953285680?text=${encodeURIComponent(t.whatsappMsg)}`;
+      document.getElementById('nav-reserve-btn').href = waUrl;
+      document.getElementById('floating-wa').href = waUrl;
+
+      renderFaqs();
+      renderMenu();
+    }
+
+    function setCategory(cat) {
+      currentCategory = cat;
+      document.querySelectorAll('.cat-btn').forEach(btn => {
+        if (btn.getAttribute('data-cat') === cat) {
+          btn.className = 'cat-btn whitespace-nowrap px-4 py-1.5 rounded-full text-xs font-medium transition-all bg-[#2B1E1A] text-white shadow-sm';
+        } else {
+          btn.className = 'cat-btn whitespace-nowrap px-4 py-1.5 rounded-full text-xs font-medium transition-all bg-white text-[#6E5D57] hover:bg-[#FDF8F5] border border-[#F0E5DE]';
+        }
+      });
+      renderMenu();
+    }
+
+    function handleSearch(val) {
+      currentSearch = val.trim().toLowerCase();
+      renderMenu();
+    }
+
+    function renderFaqs() {
+      const t = DICTIONARY[currentLang];
+      const faqContainer = document.getElementById('faq-list');
+      faqContainer.innerHTML = t.faqs.map(faq => `
+        <div class="border border-[#F0E5DE] rounded-xl p-4 bg-[#FDF8F5]/40">
+          <h4 class="text-sm font-semibold text-[#2B1E1A] mb-1">${faq.q}</h4>
+          <p class="text-xs text-[#6E5D57] leading-relaxed font-light">${faq.a}</p>
+        </div>
+      `).join('');
+    }
+
+    function renderMenu() {
+      const grid = document.getElementById('menu-grid');
+      const filtered = MENU_ITEMS.filter(item => {
+        const matchCat = currentCategory === 'all' || item.cat === currentCategory;
+        const name = item.name[currentLang].toLowerCase();
+        const descMatch = item.desc ? item.desc[currentLang].toLowerCase().includes(currentSearch) : false;
+        const introMatch = item.intro ? item.intro[currentLang].toLowerCase().includes(currentSearch) : false;
+        const matchSearch = name.includes(currentSearch) || descMatch || introMatch;
+        return matchCat && matchSearch;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-full text-center py-12">
+            <p class="text-sm text-[#6E5D57]">No se encontraron resultados.</p>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = filtered.map(item => {
+        const isExp = item.isExp;
+        const metaText = isExp ? (typeof item.meta === 'object' ? item.meta[currentLang] : item.meta) : '';
+        
+        let waText = 'Olá Angélica, quero meu diagnóstico gratuito';
+        const waMsgEncoded = encodeURIComponent(waText);
+        const aspectClass = isExp ? 'aspect-[16/10]' : 'aspect-[4/5]';
+
+        return `
+        <div class="bg-white rounded-2xl border ${isExp ? 'border-[#A44A27]/30 shadow-sm' : 'border-[#F0E5DE]'} overflow-hidden hover:shadow-md transition-shadow flex flex-col justify-between">
+          <div>
+            ${item.img ? `
+              <div class="w-full ${aspectClass} bg-[#F0E5DE]/40 overflow-hidden relative">
+                <img 
+                  src="${item.img}" 
+                  alt="${item.name[currentLang]}" 
+                  class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                  onerror="this.closest('.bg-white').style.display='none'"
+                />
+              </div>
+            ` : ''}
+
+            <div class="p-5">
+              ${isExp ? `
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="bg-[#A44A27]/10 text-[#A44A27] text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full">
+                    ${DICTIONARY[currentLang].tagExp}
+                  </span>
+                  <span class="text-[11px] text-[#6E5D57] font-medium">${metaText}</span>
+                </div>
+              ` : ''}
+
+              <div class="flex justify-between items-baseline gap-2 mb-2">
+                <h3 class="font-serif text-lg text-[#2B1E1A] font-medium leading-snug">
+                  ${item.name[currentLang]}
+                </h3>
+                <div class="text-sm font-bold text-[#A44A27] whitespace-nowrap text-right">
+                  ${formatPrice(item.price, currentLang)}
+                </div>
+              </div>
+
+              ${isExp ? `
+                <p class="text-xs text-[#2B1E1A] font-medium mb-3">
+                  ${item.intro[currentLang]}
+                </p>
+                <ul class="space-y-1.5 mb-3">
+                  ${item.steps[currentLang].map((s, idx) => `
+                    <li class="text-[11px] leading-relaxed text-[#6E5D57] flex items-start gap-1.5">
+                      <span class="text-[#A44A27] font-bold shrink-0">${idx + 1}.</span>
+                      <span><strong class="text-[#2B1E1A] font-semibold">${s.t}:</strong> ${s.d}</span>
+                    </li>
+                  `).join('')}
+                </ul>
+                <p class="text-[11px] italic text-[#A44A27] font-medium pt-1 border-t border-[#F0E5DE]">
+                  ${item.footerQuote[currentLang]}
+                </p>
+              ` : `
+                <p class="text-xs text-[#6E5D57] leading-relaxed font-light mb-4">
+                  ${item.desc[currentLang]}
+                </p>
+              `}
+            </div>
+          </div>
+
+          <div class="px-5 pb-5 pt-2 flex items-center justify-between">
+            ${item.pop ? `
+              <span class="inline-block bg-[#A44A27]/10 text-[#A44A27] text-[10px] uppercase font-bold tracking-wider px-2.5 py-0.5 rounded-full">
+                ${isExp ? DICTIONARY[currentLang].tagFeatured : 'Popular'}
+              </span>
+            ` : '<div></div>'}
+
+            <a 
+              href="https://wa.me/5511953285680?text=${waMsgEncoded}" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              class="bg-[#A44A27] hover:bg-[#C86B47] text-white text-xs px-4 py-2 rounded-full font-medium transition-colors shadow-sm ml-auto"
+            >
+              ${isExp ? DICTIONARY[currentLang].bookExp : DICTIONARY[currentLang].orderBtn}
+            </a>
+          </div>
+        </div>
+      `}).join('');
+    }
+
+    setLanguage('es');
+    fetchExchangeRates();
+  </script>
 </body>
 </html>
